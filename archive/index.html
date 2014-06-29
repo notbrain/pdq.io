@@ -1,0 +1,79 @@
+<html>
+	
+<head>
+<title>BTC CB Sell Price</title>
+
+<meta http-equiv="refresh" content="3600">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/slate/bootstrap.min.css" rel="stylesheet">
+
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<link href="/btc/css/btc.css" rel="stylesheet">
+
+<script>
+var refreshCount = 1;
+var getSellPrice = function() {
+	$.getJSON( "/btc/sell.json.php", function( json ) {
+	  // console.log(json)
+	  $("#sellprice_gross").html(json.subtotal.amount)
+	  $("title").text(json.subtotal.amount)
+	  $("#sellprice_net").html(json.total.amount)
+	  $("#value_20_btc").html((json.total.amount * 20).toFixed(0))
+	  $(".refreshCount").text(refreshCount);
+	  refreshCount += 1;
+	  setTimeout(getSellPrice,60000);
+	});
+
+}
+
+getSellPrice();
+
+</script>
+
+<style>
+
+
+</style>
+
+</head>
+
+<body>
+<div class="refreshCount">0</div>
+
+<div style="position: relative;" class="clearfix">
+	<div style="float: right; width: 384px; height: 216px; background-color: #555;">
+		here
+	</div>
+</div>
+
+
+<div class="px256">
+	<h1 class="">
+		<sup>$</sup><span id="sellprice_gross"></span>
+	</h1>
+	<h3 class="">gross</h3>
+</div>
+<div>
+	<h1 class="">
+		<sup>$</sup><span id="sellprice_net"></span>
+	</h1>
+	<h3 class="">net</h3>
+</div>
+<div>
+	<h1 class="">
+		<sup>$</sup><span id="value_20_btc"></span>
+	</h1>
+	<h3 class="">20btc * NET</h3>
+</div>
+
+<pre style="background-color:#272b30; border:0;color:green;display:none;">
+<?php //print_r($sellsObj); ?>
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #242424;
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+}
+
+h1, h2, h3 {
+	text-align: right;
+}
+
+h1, h2, h3 {
+	margin-bottom: 0;
+}
+
+h1 * {
+	font-family: 'Oxygen';
+	font-size: 80px;
+	line-height: 80px;
+	font-weight: 300;
+	letter-spacing: .5px;
+	color: #B3F200;
+}
+
+h1 span.blockchain {
+	color: #84C8F2;
+}
+
+h1 span.bitminter {
+	color: #FFDC20;
+}
+
+h1 sup {
+	font-size: 44px;
+	line-height: 44px;
+	color: #999;
+}
+
+h1 span {
+	min-height: 80px;
+}
+
+.refreshCount {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	color: #9EFF00;
+
+}
+
+.rect {
+	overflow: hidden;
+	position: relative;
+	float: left;
+	padding: 0;
+	background-color: #050505;
+}
+
+.rect label {
+	display: block;
+	text-align: left;
+	background-color: #050505;
+	text-transform: uppercase;
+	color: #FFF;
+	font-family: 'Oxygen';
+	font-size: 28px;
+	font-weight: 300;
+}
+
+.rect h1 {
+	margin: 0;
+}
+
+.rect h3 {
+	padding-right: 6px;
+}
+
+.rect-default {
+	width: 378px;
+	height: 210px;
+	margin: 5px 0 0 5px;
+}
+
+.rect-blockchain span {
+	
+}
+
+.rect-2w {
+	width: 761px;
+	height: 210px;
+	margin: 5px 0 0 5px;
+}
+
+.rect-3w {
+	width: 1144px;
+	height: 210px;
+	margin: 5px 0 0 5px;
+}
+
+.rect-4w {
+	width: 1527px;
+	height: 210px;
+	margin: 5px 0 0 5px;
+}
+
+.rect-5w {
+	width: 1910px;
+	height: 210px;
+	margin: 5px 0 0 5px;
+}
+
+

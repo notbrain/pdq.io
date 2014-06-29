@@ -1,0 +1,270 @@
+<div ng-controller="MainCtrl">
+  
+  <div class="rect rect-2w">
+    <btc-graph></btc-graph>
+  </div>
+
+  <div class="rect rect-default">
+    <label class="">Coinbase Gross</label>
+    <h1 class="">
+      <sup>$</sup><span id="sellprice_gross">{{coinbase.subtotal.amount | number:0 }}</span>
+    </h1>
+  </div>
+  
+  <div class="rect rect-default">
+    
+    <label class="">Coinbase Net</label>
+    <h1 class="">
+      <sup>$</sup><span id="sellprice_net">{{coinbase.amount | number:0 }}</span>
+    </h1>
+    
+  </div>
+  
+  <div class="rect rect-default">
+    
+    <label class="">20btc NET &times;1k</label>
+    <h1 class="">
+      <sup>$</sup><span id="value_20_btc">{{coinbase.twentybtcnet | number:2 }}</span>
+    </h1>
+    
+  </div>
+  
+  <div class="rect rect-default">
+    
+    <label class="">Difficulty</label>
+    <h1 class="">
+      <span id="difficulty" class="blockchain">{{diff | number:1 }}B</span>
+    </h1>
+    
+  </div>
+  
+  <div class="rect rect-default">
+    
+    <label class="">Circulation</label>
+    <h1 class="">
+      <span id="totalbtc" class="blockchain">{{totalbtc | number:1 }}M</span>
+    </h1>
+    
+  </div>
+  
+  <div class="rect rect-default">
+    
+    <label class="">Market Cap</label>
+    <h1 class="">
+      <sup>$</sup><span id="marketcap" class="blockchain">{{btcmarketcap | number:1 }}B</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class="">Hashrate PH/s</label>
+    <h1 class="">
+      <span id="hashrate" class="blockchain">{{btchashrate | number:0 }}</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class="">Last 24h Transactions</label>
+    <h1 class="">
+      <span id="hashrate" class="blockchain">{{transactioncount | number:0}}</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[two.predictions[0] <= 3]">
+    
+    <label class="muni-route">2</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{two.predictions[0]}}</span>
+      <span class="nextnext">{{two.predictions[1]}}</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[three.predictions[0] <= 3]">
+    
+    <label class="muni-route">3</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{three.predictions[0]}}</span>
+      <span class="nextnext">{{three.predictions[1]}}</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[twentyTwo.predictions[0] <= 3]">
+    
+    <label class="muni-route">22</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{twentyTwo.predictions[0]}}</span>
+      <span class="nextnext">{{twentyTwo.predictions[1]}}</span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[thirtyEight.predictions[0] <= 3]">
+    
+    <label class="muni-route">38</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{thirtyEight.predictions[0]}}</span>
+      <span class="nextnext">{{thirtyEight.predictions[1]}}</span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    <img class="sports-logo sfgiants" src="../images/sfgiants.png" border="0" alt="San Francisco Giants"/>
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    <img class="sports-logo sf49ers" src="../images/sf49ers2.png" border="0" alt="San Francisco Giants"/>
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+
+  <div class="rect rect-default">
+    
+    <label class="">KST</label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
+
+  </div>
+  
+</div>
+

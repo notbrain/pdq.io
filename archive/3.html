@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>BTC Dash</title>
+
+<meta name="viewport" content="initial-scale=0.296,width=device-width">
+<meta http-equiv="refresh" content="3600">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+<link href="/btc/css/btc.css" rel="stylesheet">
+<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.2/d3.js" charset="UTF-8"></script>
+
+<script>
+
+$(document).ready(function(){
+
+  Number.prototype.formatMoney = function(c, d, t){
+  var n = this, 
+      c = isNaN(c = Math.abs(c)) ? 2 : c,
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "",
+      i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+      j = (j = i.length) > 3 ? j % 3 : 0;
+     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+   };
+
+  var refreshCount = 1;
+
+  var getBitminterInfo = function() {
+    $.getJSON( "/btc/feeds/bitminter.json.php", function( json2 ) {
+      $("#myhashrate").text((json2.hash_rate / 1000).formatMoney(0, '.', ','));
+      $("#poolbalance").text( (json2.balances.BTC * 1000).formatMoney(3, '.', ',') );
+    });
+  }
+
+  var getBlockchainInfo = function() {
+    $.getJSON( "/btc/feeds/blockchain.json.php", function( json2 ) {
+      $("#difficulty").text(json2.diff);
+      $("#blockcount").text(json2.blockcount);
+      $("#latesthash").text(json2.latesthash);
+      $("#totalbtc").text(json2.totalbtc.formatMoney(0, '.', ','));
+      $("#interval").text(json2.interval + "s");
+      $("#marketcap").text(json2.marketcap);
+      $("#dayprice").text(json2.dayprice);
+      $("#hashrate").text(json2.hashrate);
+      $("#mintedbal").text(json2.mintedbal);
+    });
+  }
+
+  var getSellPrice = function() {
+    $.getJSON( "/btc/feeds/sell.json.php", function( json ) {
+      // console.log(json)
+      $("#sellprice_gross").text(json.subtotal.amount)
+      $("title").text(json.subtotal.amount)
+      $("#sellprice_net").text(json.total.amount)
+      $("#value_20_btc").text((json.total.amount * 20).formatMoney(0, '.', ','))
+      $(".refreshCount").text(refreshCount);
+      refreshCount += 1;
+
+      getBlockchainInfo();
+      getBitminterInfo();
+
+      setTimeout(getSellPrice,60000); // 60 seconds
+    });
+  }
+
+  getSellPrice();
+  // 
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div class="rect rect-default">
+  <label class="">Coinbase Gross</label>
+  <h1 class="">
+    <sup>$</sup><span id="sellprice_gross"></span>
+  </h1>
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">Coinbase Net</label>
+  <h1 class="">
+    <sup>$</sup><span id="sellprice_net"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">20btc NET</label>
+  <h1 class="">
+    <sup>$</sup><span id="value_20_btc"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-2w">
+  
+  <label class="">Difficulty</label>
+  <h1 class="">
+    <span id="difficulty" class="blockchain">?</span>
+  </h1>
+
+</div>
+
+<div class="rect rect-2w">
+  
+  <label class="">Circulation</label>
+  <h1 class="">
+    <span id="totalbtc" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-2w">
+  
+  <label class="">Market Cap</label>
+  <h1 class="">
+    <sup>$</sup><span id="marketcap" class="blockchain"></span>
+  </h1>
+
+</div>
+
+
+
+<div class="rect rect-default">
+  
+  <label class="">Interval</label>
+  <h1 class="">
+    <span id="interval" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-4w" style="display: none;">
+  
+  <label class="">Latest Hash</label>
+  <h1 class="">
+    <span id="latesthash" style="font-size: 110%;" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">24HR Price</label>
+  <h1 class="">
+    <sup>$</sup><span id="dayprice" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">Hashrate PH/s</label>
+  <h1 class="">
+    <span id="hashrate" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">Hashrate GH/s</label>
+  <h1 class="">
+    <span id="myhashrate" class="bitminter"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">Pool <span style="text-transform: none;">m</span>BTC</label>
+  <h1 class="">
+    <span id="poolbalance" class="bitminter"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-default">
+  
+  <label class="">Minted <span style="text-transform: none;">m</span>BTC</label>
+  <h1 class="">
+    <span id="mintedbal" class="blockchain"></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-5w">
+  
+  <label class=""></label>
+  <h1 class="">
+    <span id=""></span>
+  </h1>
+
+</div>
+
+<div class="rect rect-5w">
+  
+  <label class=""></label>
+  <h1 class="">
+    <span id=""></span>
+  </h1>
+
+</div>
+
+
+
+<pre style="background-color:#272b30; border:0;color:green;display:none;">
+<?php //print_r($sellsObj); ?>
+</pre>
+</body>
+
+</html>

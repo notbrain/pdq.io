@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #242424;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  text-align: right;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0;
+}
+
+h1 * {
+  font-family: 'Oxygen';
+  font-size: 100px;
+  line-height: 80px;
+  font-weight: 300;
+  letter-spacing: -3px;
+  color: #B3F200;
+  margin-right: 3px;
+}
+
+h1 span.blockchain {
+  color: #84C8F2;
+}
+
+h1 span.bitminter {
+  color: #FFDC20;
+}
+
+h1 sup {
+  font-size: 44px;
+  line-height: 44px;
+  color: #999;
+}
+
+h1 span {
+  min-height: 80px;
+}
+
+.refreshCount {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #9EFF00;
+
+}
+
+.rect {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  padding: 0;
+  background-color: #050505;
+}
+
+.rect label {
+  display: block;
+  text-align: left;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: 'Oxygen';
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.rect h1 {
+  margin: 0;
+}
+
+.rect h3 {
+  padding-right: 6px;
+}
+
+.rect-default {
+  width: 378px;
+  height: 210px;
+  margin: 5px 0 0 5px;
+}
+
+.rect-blockchain span {
+  
+}
+
+.rect-2w {
+  width: 761px;
+  height: 210px;
+  margin: 5px 0 0 5px;
+}
+
+.rect-3w {
+  width: 1144px;
+  height: 210px;
+  margin: 5px 0 0 5px;
+}
+
+.rect-4w {
+  width: 1527px;
+  height: 210px;
+  margin: 5px 0 0 5px;
+}
+
+.rect-5w {
+  width: 1910px;
+  height: 210px;
+  margin: 5px 0 0 5px;
+}
+
+label.muni-route {
+  font-size: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 210px;
+  color: #000;
+  background-color: #242424;
+  font-weight: 600;
+  z-index: 1;
+/*  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0.8, #242424),
+    color-stop(1, #000000)
+  );
+  background-image: -o-linear-gradient(right bottom, #242424 80%, #000000 100%);
+  background-image: -moz-linear-gradient(right bottom, #242424 80%, #000000 100%);
+  background-image: -webkit-linear-gradient(right bottom, #242424 80%, #000000 100%);
+  background-image: -ms-linear-gradient(right bottom, #242424 80%, #000000 100%);
+  background-image: linear-gradient(to right bottom, #242424 80%, #000000 100%);*/
+}
+
+h1.muni-minutes {
+  /*margin-top: 1em;*/
+  /*line-height: 210px;*/
+  z-index: 99;
+  position: absolute;
+  bottom: .7em;
+  right: 1em;
+}
+
+.muni-minutes span {
+  color: #CCC;
+}
+
+.next {
+  font-size: 140px;
+  margin-right: .25em;
+}
+
+.muni-minutes span.nextnext {
+  color: #777;
+}
+
+.muni-relax .next {
+  color: #83B25D;
+}
+
+.muni-critical .next {
+  color: #C10107;
+/*  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
+  background: -o-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
+  background: -ms-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);*/
+  
+}
+
+.muni-warning .next {
+  color: #CB7A01;
+/*  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
+  background: -o-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
+  background: -ms-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);*/
+}
+
+.sports-logo {
+  opacity: .3;
+  /*width: 120px;*/
+  margin-right: .15em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sports-logo.sfgiants {
+  
+}
+
+/* D3 Graph */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+/* /D3 Graph */
