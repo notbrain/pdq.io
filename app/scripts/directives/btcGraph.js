@@ -1,15 +1,13 @@
-/* jshint unused:vars */
 'use strict';
 
-angular.module('btcApp', [])
-.directive('btcGraph', function($log) {
-  $log.info('[btcGraph]')
+angular.module('btcApp').directive('btcGraph', function($log) {
+  // $log.info('[btcGraph]')
   return {
-    templateUrl: '/views/_performanceGraph.html',
+    templateUrl: 'views/_btcGraph.html',
     restrict: 'E',
     transclude: true,
     replace: true,
-    controller: function() { // attrs
+    link: function() { // attrs
       
       $log.info('[btcGraph#link:]')
       
@@ -18,4 +16,4 @@ angular.module('btcApp', [])
     
   }
   
-});
+})

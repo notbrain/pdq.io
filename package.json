@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "bcrypt": "^0.7.8",
-    "body-parser": "^1.4.3",
+    "body-parser": "^1.0.2",
     "express": "^4.4.4",
     "lodash": "^2.4.1",
     "method-override": "^2.0.2",
+    "moment": "^2.7.0",
     "mongoose": "^3.8.12",
     "morgan": "^1.1.1",
     "nextbusjs": "^1.0.1",

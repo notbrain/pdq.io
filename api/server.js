@@ -36,10 +36,10 @@ app.all('*',function(req, res, next) {
 // 
 // app.use('/', require('./routes/public').router)
 // app.use('/auth', require('./routes/auth').router)
-app.use('/api/sfmuni', require('./controllers/sfmuniAPI').controller)
+app.use('/api/sfmuni',     require('./controllers/sfmuniAPI').controller)
 app.use('/api/blockchain', require('./controllers/blockchain').controller)
-app.use('/api/coinbase', require('./controllers/coinbase').controller)
-app.use('/api/record', require('./controllers/record').controller)
+app.use('/api/coinbase',   require('./controllers/coinbase').controller)
+app.use('/api/record',     require('./controllers/record').controller)
 
 // SERVER
 app.listen(port)
