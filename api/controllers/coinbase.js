@@ -28,8 +28,6 @@ router.get('/sellprice',
     
 })
 
-
-
 module.exports = {
   controller: router
 }

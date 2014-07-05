@@ -48,7 +48,7 @@ angular.module('btcApp')
     
     $log.info('[refreshCoinbaseData]')
     
-    $http.get('http://192.168.1.12:3000/api/coinbase/sellprice').success(function(response) {
+    $http.get('http://api.pdq.io/coinbase/sellprice').success(function(response) {
       
       $scope.coinbase = response
       $scope.twentybtcnet = (response.amount * 20) / 1000
@@ -60,7 +60,7 @@ angular.module('btcApp')
     
     $log.info('[refreshMuniData]')
     
-    $http.get('http://192.168.1.12:3000/api/sfmuni/6592', null).success(function(response) {
+    $http.get('http://api.pdq.io/sfmuni/6592', null).success(function(response) {
       
       // $log.info(response)
       
@@ -78,7 +78,7 @@ angular.module('btcApp')
       
     })
     
-    $http.get('http://192.168.1.12:3000/api/sfmuni/4640', null).success(function(response) {
+    $http.get('http://api.pdq.io/sfmuni/4640', null).success(function(response) {
       
       $scope.twentyTwo = _.find(response, function(obj) {
           if(obj.title === '22-Fillmore') {
@@ -88,7 +88,7 @@ angular.module('btcApp')
       
     })
     
-    $http.get('http://192.168.1.12:3000/api/sfmuni/4296', null).success(function(response) {
+    $http.get('http://api.pdq.io/sfmuni/4296', null).success(function(response) {
       
       $scope.thirtyEight = _.find(response, function(obj) {
           if(obj.title === '38-Geary') {
