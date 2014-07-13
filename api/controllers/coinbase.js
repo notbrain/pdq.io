@@ -1,5 +1,6 @@
 var express       = require('express')
 var request       = require('request')
+var _             = require('lodash')
 var router        = express.Router()
 
 // var passport = require('../config/passport').passport
@@ -24,6 +25,39 @@ router.get('/sellprice',
     
     request.get('https://coinbase.com/api/v1/prices/sell', function(err, response, body){
       res.json(JSON.parse(body))
+    })
+    
+})
+
+router.get('/historical/:page',
+  function(req, res) {
+    
+    // res.set({
+    //   'Content-type': 'application/json; charset=UTF-8'
+    // })
+    
+    request.get('https://coinbase.com/api/v1/prices/historical', function(err, response, body){
+      
+      var arrPrices = body.split('\n')
+      
+      var jsonPrices = []
+      
+      _.forEach(arrPrices, function(val, idx, coll) {
+        
+        var aryDatePrice = val.split(',')
+        
+        var pricePoint = {
+          date: aryDatePrice[0],
+          price: parseFloat(aryDatePrice[1])
+        }
+        
+        // console.log(pricePoint)
+        
+        jsonPrices.push(pricePoint)
+        
+      })
+      
+      res.json(200, jsonPrices)
     })
     
 })

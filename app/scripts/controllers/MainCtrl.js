@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('btcApp')
-.controller('MainCtrl', function ($log, $scope, $http, $interval) {
+.controller('MainCtrl', function ($log, $scope, $http, $interval, APPCONFIG) {
   
   $log.info('[MainCtrl]')
   
@@ -15,8 +15,6 @@ angular.module('btcApp')
       $http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
     }
   }, true)
-  
-
   
   var refreshBlockchainData = function() {
     
@@ -48,7 +46,7 @@ angular.module('btcApp')
     
     $log.info('[refreshCoinbaseData]')
     
-    $http.get('http://api.pdq.io/coinbase/sellprice').success(function(response) {
+    $http.get(APPCONFIG.apiHost + '/coinbase/sellprice').success(function(response) {
       
       $scope.coinbase = response
       $scope.twentybtcnet = (response.amount * 20) / 1000
@@ -60,7 +58,7 @@ angular.module('btcApp')
     
     $log.info('[refreshMuniData]')
     
-    $http.get('http://api.pdq.io/sfmuni/6592', null).success(function(response) {
+    $http.get(APPCONFIG.apiHost + '/sfmuni/6592', null).success(function(response) {
       
       // $log.info(response)
       
@@ -78,7 +76,7 @@ angular.module('btcApp')
       
     })
     
-    $http.get('http://api.pdq.io/sfmuni/4640', null).success(function(response) {
+    $http.get(APPCONFIG.apiHost + '/sfmuni/4640', null).success(function(response) {
       
       $scope.twentyTwo = _.find(response, function(obj) {
           if(obj.title === '22-Fillmore') {
