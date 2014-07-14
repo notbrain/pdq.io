@@ -116,23 +116,6 @@ h1 span {
   /*background-color: #111;*/
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
 label.muni-route {
   font-size: 240px;
   position: absolute;
@@ -223,17 +206,22 @@ h1.muni-minutes {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #999;
   shape-rendering: crispEdges;
 }
 
-.x.axis path {
+.tick {
+  fill: #999;
+  /*stroke: #999;*/
+}
+
+.axis path {
   display: none;
 }
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: #B3F200;
   stroke-width: 1.5px;
 }
 /* /D3 Graph */

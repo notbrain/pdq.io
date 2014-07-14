@@ -86,7 +86,7 @@ angular.module('btcApp')
       
     })
     
-    $http.get('http://api.pdq.io/sfmuni/4296', null).success(function(response) {
+    $http.get(APPCONFIG.apiHost + '/sfmuni/4296', null).success(function(response) {
       
       $scope.thirtyEight = _.find(response, function(obj) {
           if(obj.title === '38-Geary') {
@@ -102,8 +102,8 @@ angular.module('btcApp')
     refreshCoinbaseData()
   }, 60000)
   
-  // refreshMuniData()
-  // refreshBlockchainData()
-  // refreshCoinbaseData()
+  refreshMuniData()
+  refreshBlockchainData()
+  refreshCoinbaseData()
   // drawGraph()
 });

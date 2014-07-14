@@ -1,5 +1,6 @@
 var express       = require('express')
 var request       = require('request')
+var async         = require('async')
 var _             = require('lodash')
 var router        = express.Router()
 
@@ -29,35 +30,63 @@ router.get('/sellprice',
     
 })
 
-router.get('/historical/:page',
+var fetch = function(url,cb){
+  request.get(url, function(err,response,body){
+    if ( err){
+      cb(err);
+    } else {
+      cb(null, body); // First param indicates error, null=> no error
+    }
+  })
+}
+
+router.get('/historical',
   function(req, res) {
     
-    // res.set({
-    //   'Content-type': 'application/json; charset=UTF-8'
-    // })
+    var historical_url = 'https://coinbase.com/api/v1/prices/historical'
     
-    request.get('https://coinbase.com/api/v1/prices/historical', function(err, response, body){
+    var pages = [1,2,3]
+    
+    var page_urls = []
+    
+    _.forEach(pages, function(num, idx) {
       
-      var arrPrices = body.split('\n')
+      page_urls[idx] = historical_url + '?page=' + num
       
-      var jsonPrices = []
-      
-      _.forEach(arrPrices, function(val, idx, coll) {
+    })
+    
+    async.map(page_urls, fetch, function(err, results){
+      if (err){
+        // either file1, file2 or file3 has raised an error, so you should not use results and handle the error
+        console.dir(err)
+      } else {
+        // results[0] -> "file1" body
+        // results[1] -> "file2" body
+        // results[2] -> "file3" body
+        body = results.join('\n')
         
-        var aryDatePrice = val.split(',')
+        var arrPrices = body.split('\n')
         
-        var pricePoint = {
-          date: aryDatePrice[0],
-          price: parseFloat(aryDatePrice[1])
-        }
+        var jsonPrices = []
         
-        // console.log(pricePoint)
+        _.forEach(arrPrices, function(val, idx, coll) {
+          
+          var aryDatePrice = val.split(',')
+          
+          var pricePoint = {
+            date: aryDatePrice[0],
+            price: parseFloat(aryDatePrice[1])
+          }
+          
+          if(!_.isNull(aryDatePrice[0])) {
+            jsonPrices.push(pricePoint)
+          }
+          
+          
+        })
         
-        jsonPrices.push(pricePoint)
-        
-      })
-      
-      res.json(200, jsonPrices)
+        res.json(200, jsonPrices)
+      }
     })
     
 })
