@@ -64,52 +64,83 @@
     </h1>
 
   </div>
-
+  
+  
+  
   <div class="rect rect-default">
-    
     <label class="">Last 24h Transactions</label>
     <h1 class="">
       <span id="hashrate" class="blockchain">{{transactioncount | number:0}}</span>
     </h1>
-
   </div>
 
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[two.predictions[0] <= 3]">
+  <div class="rect rect-default weather">
     
-    <label class="muni-route">2</label>
-    <h1 class="muni-minutes">
-      <span class="next">{{two.predictions[0]}}</span>
-      <span class="nextnext">{{two.predictions[1]}}</span>
+    <label class="">{{tomorrowHeading}}</label>
+    
+    <h1 class="highLow">
+      <span class="degreesF high">{{weatherForecast.day1.temp.max | number:0 }}&deg;</span> /
+      <span class="degreesF low">{{weatherForecast.day1.temp.min | number:0 }}&deg;</span>
+    </h1>
+    <h1 class="weatherDesc">
+      {{weatherForecast.day1.weather[0].description}}
+    </h1>
+    
+  </div>
+
+  <div class="rect rect-default weather">
+    
+    <label class="">{{twoDaysFromNow}}</label>
+    <h1 class="highLow">
+      <span class="degreesF high">{{weatherForecast.day2.temp.max | number:0 }}&deg;</span> /
+      <span class="degreesF low">{{weatherForecast.day2.temp.min | number:0 }}&deg;</span>
+    </h1>
+    <h1 class="weatherDesc">
+      {{weatherForecast.day2.weather[0].description}}
+    </h1>
+    
+  </div>
+
+
+  <div class="rect rect-default weather">
+    
+    <label class="">{{threeDaysFromNow}}</label>
+    <h1 class="highLow">
+      <span class="degreesF high">{{weatherForecast.day3.temp.max | number:0 }}&deg;</span> /
+      <span class="degreesF low">{{weatherForecast.day3.temp.min | number:0 }}&deg;</span>
+    </h1>
+    <h1 class="weatherDesc">
+      {{weatherForecast.day3.weather[0].description}}
+    </h1>
+    
+    
+  </div>
+
+  <div class="rect rect-default matrixCalendar">
+    
+    <div ng-repeat="month in months" class="month clearfix">
+      <span ng-repeat="day in month.days" class="day" ng-class="{'today':day.isToday,'weekend':day.isWeekend}">
+        <span ng-show="day.isToday">{{day.dt}}</span>
+      </span>
+    </div>
+    
+  </div>
+
+
+  <div class="rect rect-default">
+    
+    <label class="" style="color: black;">NET WORTH GOAL</label>
+    <h1 class="netWorthGoal">
+      <sup>$</sup><span id="">8,712,500</span>
     </h1>
 
   </div>
 
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[three.predictions[0] <= 3]">
+  <div class="rect rect-default">
     
-    <label class="muni-route">3</label>
-    <h1 class="muni-minutes">
-      <span class="next">{{three.predictions[0]}}</span>
-      <span class="nextnext">{{three.predictions[1]}}</span>
-    </h1>
-
-  </div>
-
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[twentyTwo.predictions[0] <= 3]">
-    
-    <label class="muni-route">22</label>
-    <h1 class="muni-minutes">
-      <span class="next">{{twentyTwo.predictions[0]}}</span>
-      <span class="nextnext">{{twentyTwo.predictions[1]}}</span>
-    </h1>
-
-  </div>
-
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[thirtyEight.predictions[0] <= 3]">
-    
-    <label class="muni-route">38</label>
-    <h1 class="muni-minutes">
-      <span class="next">{{thirtyEight.predictions[0]}}</span>
-      <span class="nextnext">{{thirtyEight.predictions[1]}}</span>
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
     </h1>
 
   </div>
@@ -122,6 +153,13 @@
       <span id=""></span>
     </h1>
 
+  </div>
+
+  <div class="rect rect-default">
+    <label class=""></label>
+    <h1 class="">
+      <span id=""></span>
+    </h1>
   </div>
 
   <div class="rect rect-default">
@@ -130,10 +168,8 @@
     <h1 class="">
       <span id=""></span>
     </h1>
-
   </div>
-
-
+  
   <div class="rect rect-default">
     <img class="sports-logo sf49ers" src="../images/sf49ers2.png" border="0" alt="San Francisco Giants"/>
     <label class=""></label>
@@ -142,80 +178,44 @@
     </h1>
 
   </div>
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
+  
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[two.predictions[0] <= 3]">
+    <label class="muni-route">2</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{two.predictions[0]}}</span>
+      <span class="nextnext">{{two.predictions[1]}}</span>
     </h1>
-
   </div>
 
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[three.predictions[0] <= 3]">
+    <label class="muni-route">3</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{three.predictions[0]}}</span>    
+      <span class="nextnext">{{three.predictions[1]}}</span>
     </h1>
-
   </div>
 
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[twentyTwo.predictions[0] <= 3]">
+    <label class="muni-route">22</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{twentyTwo.predictions[0]}}</span>
+      <span class="nextnext">{{twentyTwo.predictions[1]}}</span>
     </h1>
-
   </div>
 
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
+  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[thirtyEight.predictions[0] <= 3]">
+    <label class="muni-route">38</label>
+    <h1 class="muni-minutes">
+      <span class="next">{{thirtyEight.predictions[0]}}</span>
+      <span class="nextnext">{{thirtyEight.predictions[1]}}</span>
     </h1>
-
   </div>
 
-  <div class="rect rect-default">
-    
-    <label class=""></label>
+  <div class="rect rect-default korean-flag">
+    <label class="">&nbsp;</label>
     <h1 class="">
-      <span id=""></span>
+      <span id="koreanDateTime" class="shortDayTime">{{dateTimeKST}}</span>
     </h1>
-
-  </div>
-
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
-
-  </div>
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
-
-  </div>
-
-  <div class="rect rect-default">
-    
-    <label class="">KST</label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
-
   </div>
   
 </div>

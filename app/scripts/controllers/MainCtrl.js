@@ -14,7 +14,69 @@ angular.module('btcApp')
       $log.info({newval: newVal, oldval: oldVal})
       $http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
     }
-  }, true)
+  }, true);
+  
+  var matrixCalendar = function() {
+    $log.info('[matrixCalendar]')
+    
+    var months = []
+    for(var i=0; i<12; i++) {
+      
+      // get days in month
+      var dt = moment()
+      
+      dt.month(i)
+      
+      console.log('Month '+ i +': ', dt.format('YYYY-MM-DD HH:mm Z'))
+      
+      var month = {
+        daysInMonth: dt.daysInMonth(),
+        days: []
+      }
+      
+      for(var d = 1; d <= month.daysInMonth; d++) {
+        
+        dt.date(d)
+        
+        $log.info('dt : ', dt.format('YYYY-MM-DD HH:mm Z'))
+        $log.info('now: ', moment().format('YYYY-MM-DD HH:mm Z'))
+        
+        var isToday = false
+        
+        if(dt.isSame(moment(), 'day')) {
+          $log.info('NOW: ' + moment().format('MMDD HH:mm'))
+          isToday = true
+        }
+        
+        var day = {
+          isToday: isToday,
+          dt: dt.format('D'),
+          isWeekend: dt.day() === 0 || dt.day() === 6
+        }
+        
+        month.days.push(day)
+      }
+      
+      months.push(month)
+      
+    }
+    
+    console.log('Months:',months)
+    
+    $scope.months = months
+    
+  }
+  
+  $scope.daysInYear = function(){
+    
+    var ary = []
+    for(var i = 1; i < 365; i++) {
+      ary.push(i)
+    }
+    
+    return ary
+    
+  }
   
   var refreshBlockchainData = function() {
     
@@ -96,14 +158,41 @@ angular.module('btcApp')
     })
   }
   
+  var refreshWeatherForecast = function(){
+    
+    $http.get(APPCONFIG.apiHost + '/weather/forecast', null).success(function(response) {
+      
+      $scope.weatherForecast = response
+      
+      $scope.tomorrowHeading = moment(response.day1.dt, 'X').format('dddd, MMMM D')
+      
+      $scope.twoDaysFromNow = moment(response.day2.dt, 'X').format('dddd, MMMM D')
+      
+      $scope.threeDaysFromNow = moment(response.day3.dt, 'X').format('dddd, MMMM D')
+      
+    })
+    
+  }
+  
   $interval(function() {
     refreshMuniData()
     refreshBlockchainData()
     refreshCoinbaseData()
-  }, 60000)
+    refreshWeatherForecast()
+  }, 120000)
   
   refreshMuniData()
   refreshBlockchainData()
   refreshCoinbaseData()
-  // drawGraph()
+  refreshWeatherForecast()
+  
+  // time tick
+  $interval(function() {
+    $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
+  }, 60000)
+  
+  $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
+  
+  matrixCalendar()
+  
 });

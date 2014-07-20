@@ -15,7 +15,7 @@ h1, h2, h3 {
   margin-bottom: 0;
 }
 
-h1 * {
+h1 {
   font-family: 'Oxygen';
   font-size: 100px;
   line-height: 80px;
@@ -64,7 +64,7 @@ h1 span {
   text-align: left;
   background-color: transparent;
   text-transform: uppercase;
-  color: #FFF;
+  color: #CCC;
   font-family: 'Oxygen';
   font-size: 28px;
   font-weight: 300;
@@ -112,47 +112,55 @@ h1 span {
   margin: 5px 0 0 5px;
 }
 
+.rect.korean-flag {
+  background: transparent url(/images/flags-korean.png) 0px -12px no-repeat scroll;
+  /*zoom: 1.5;*/
+}
+
+.rect.korean-flag h1 {
+  text-align: center;
+}
+#koreanDateTime {
+  font-size: 50px;
+  color: #DFD877;
+}
+
+
 .graphCanvas {
   /*background-color: #111;*/
+  background: rgba(42,73,117,0);
+background: -moz-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(42,73,117,1)), color-stop(29%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+background: -webkit-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+background: -o-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+background: -ms-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+background: linear-gradient(to bottom, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a4975', endColorstr='#000000', GradientType=0 );
 }
 
 label.muni-route {
   font-size: 240px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  float: left;
   margin: 0;
   padding: 0;
   line-height: 210px;
   color: #000;
   background-color: #242424;
   font-weight: 600;
-  z-index: 1;
-/*  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    color-stop(0.8, #242424),
-    color-stop(1, #000000)
-  );
-  background-image: -o-linear-gradient(right bottom, #242424 80%, #000000 100%);
-  background-image: -moz-linear-gradient(right bottom, #242424 80%, #000000 100%);
-  background-image: -webkit-linear-gradient(right bottom, #242424 80%, #000000 100%);
-  background-image: -ms-linear-gradient(right bottom, #242424 80%, #000000 100%);
-  background-image: linear-gradient(to right bottom, #242424 80%, #000000 100%);*/
+  z-index: 0;
 }
 
 h1.muni-minutes {
-  /*margin-top: 1em;*/
-  /*line-height: 210px;*/
-  z-index: 99;
   position: absolute;
-  bottom: .7em;
-  right: 1em;
+  z-index: 99;
+  bottom: .2em;
+  right: .5em;
+  text-align: right;
 }
 
 .muni-minutes span {
   color: #CCC;
+  /*float: left;*/
 }
 
 .next {
@@ -170,23 +178,10 @@ h1.muni-minutes {
 
 .muni-critical .next {
   color: #C10107;
-/*  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
-  background: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
-  background: -o-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
-  background: -ms-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);
-  background: linear-gradient(180deg, rgb(0, 0, 0) 89%, rgb(255, 0, 31) 100%);*/
-  
 }
 
 .muni-warning .next {
   color: #CB7A01;
-/*  background: rgb(0, 0, 0);
-  background: -moz-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
-  background: -webkit-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
-  background: -o-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
-  background: -ms-linear-gradient(90deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);
-  background: linear-gradient(180deg, rgb(0, 0, 0) 89%, rgb(255, 106, 0) 100%);*/
 }
 
 .sports-logo {
@@ -225,3 +220,70 @@ h1.muni-minutes {
   stroke-width: 1.5px;
 }
 /* /D3 Graph */
+
+
+/* weather */
+
+.temp {
+  font-size: 72px;
+  color: #CCC;
+}
+
+.highLow {
+  font-size: 72px;
+  color: #CCC;
+}
+
+.high {
+  color: #F2AA75;
+}
+.low {
+  color: #84C8F2;
+}
+
+.weatherDesc {
+  font-size: 38px;
+  color: #CCC;
+  padding-right: .2em;
+  letter-spacing: -1px;
+  /*text-transform: uppercase;*/
+}
+
+.netWorthGoal {
+  font-size: 80px;
+}
+
+.matrixCalendar {
+  background-color: #333;
+  /*padding: 2px 0 0 2px;*/
+  line-height: 11px;
+}
+
+.month {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.day {
+  width: 11px;
+  height: 14px;
+  background-color: #000;
+  float: left;
+  margin: 0px 1px 0px 0px;
+  font-size: 9px;
+  line-height: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.weekend {
+  background-color: #3F3A30;
+}
+
+.today {
+  color: #000;
+  background-color: #D4F20D;
+  /*border: 1px solid #D4F20D;*/
+}

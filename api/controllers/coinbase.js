@@ -2,6 +2,7 @@ var express       = require('express')
 var request       = require('request')
 var async         = require('async')
 var _             = require('lodash')
+var moment        = require('moment')
 var router        = express.Router()
 
 // var passport = require('../config/passport').passport
@@ -45,7 +46,7 @@ router.get('/historical',
     
     var historical_url = 'https://coinbase.com/api/v1/prices/historical'
     
-    var pages = [1,2,3]
+    var pages = [1,2,3,4,5]
     
     var page_urls = []
     
@@ -69,12 +70,17 @@ router.get('/historical',
         
         var jsonPrices = []
         
+        var changeCount = 0
         _.forEach(arrPrices, function(val, idx, coll) {
+          
+          // console.log(val)
+          
+          changeCount++
           
           var aryDatePrice = val.split(',')
           
           var pricePoint = {
-            date: aryDatePrice[0],
+            date: moment(aryDatePrice[0]).format('YYYY-MM-DDTHH:mm:ss'),
             price: parseFloat(aryDatePrice[1])
           }
           
@@ -82,8 +88,9 @@ router.get('/historical',
             jsonPrices.push(pricePoint)
           }
           
-          
         })
+        
+        console.log('count: ' + changeCount)
         
         res.json(200, jsonPrices)
       }
