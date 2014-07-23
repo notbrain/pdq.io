@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('btcApp')
-.controller('MainCtrl', function ($log, $scope, $http, $interval, APPCONFIG) {
+.controller('MainCtrl', function ($window, $log, $scope, $http, $interval, APPCONFIG) {
   
   $log.info('[MainCtrl]')
   
@@ -17,7 +17,7 @@ angular.module('btcApp')
   }, true);
   
   var matrixCalendar = function() {
-    $log.info('[matrixCalendar]')
+    // $log.info('[matrixCalendar]')
     
     var months = []
     for(var i=0; i<12; i++) {
@@ -27,7 +27,7 @@ angular.module('btcApp')
       
       dt.month(i)
       
-      console.log('Month '+ i +': ', dt.format('YYYY-MM-DD HH:mm Z'))
+      // $log.info('Month '+ i +': ', dt.format('YYYY-MM-DD HH:mm Z'))
       
       var month = {
         daysInMonth: dt.daysInMonth(),
@@ -38,13 +38,13 @@ angular.module('btcApp')
         
         dt.date(d)
         
-        $log.info('dt : ', dt.format('YYYY-MM-DD HH:mm Z'))
-        $log.info('now: ', moment().format('YYYY-MM-DD HH:mm Z'))
+        // $log.info('dt : ', dt.format('YYYY-MM-DD HH:mm Z'))
+        // $log.info('now: ', moment().format('YYYY-MM-DD HH:mm Z'))
         
         var isToday = false
         
         if(dt.isSame(moment(), 'day')) {
-          $log.info('NOW: ' + moment().format('MMDD HH:mm'))
+          // $log.info('NOW: ' + moment().format('MMDD HH:mm'))
           isToday = true
         }
         
@@ -60,8 +60,6 @@ angular.module('btcApp')
       months.push(month)
       
     }
-    
-    console.log('Months:',months)
     
     $scope.months = months
     
@@ -174,6 +172,31 @@ angular.module('btcApp')
     
   }
   
+  var getMLBStandings = function() {
+    
+    // cache layer
+    
+    $http({
+      method: 'GET',
+      url: APPCONFIG.apiHost + '/sports/mlb/nl',
+      cache: true,
+      responseType: 'json'
+    }).success(function(response) {
+      
+      var standings = response.standings_all_league_repeater.standings_all.queryResults.row
+      
+      $log.debug(standings)
+      
+      $scope.nlWestStandings = _.filter(standings, function(obj, idx, coll) {
+        return obj.division === 'National League West'
+      })
+      
+      $log.debug($scope.nlWestStandings)
+      
+    })
+    
+  }
+  
   $interval(function() {
     refreshMuniData()
     refreshBlockchainData()
@@ -194,5 +217,15 @@ angular.module('btcApp')
   $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
   
   matrixCalendar()
+  getMLBStandings()
+  
+  var tzOffset = '-08:00'
+  if(moment().isDST()) {
+    tzOffset = '-07:00'
+  } 
+  $scope.todaysDate = moment().zone(tzOffset).format('MMMM Do h:mma')
+  
+  
+  // $log.info('isDST',moment().isDST())
   
 });

@@ -136,6 +136,16 @@
 
   </div>
 
+  <div class="rect rect-default todaysDate">
+    
+    <label class="">Today is</label>
+    <h1 class="">
+      <span class="topdaysDate">{{todaysDate}}</span>
+    </h1>
+
+  </div>
+
+
   <div class="rect rect-default">
     
     <label class=""></label>
@@ -145,16 +155,6 @@
 
   </div>
 
-
-  <div class="rect rect-default">
-    
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
-
-  </div>
-
   <div class="rect rect-default">
     <label class=""></label>
     <h1 class="">
@@ -162,21 +162,23 @@
     </h1>
   </div>
 
-  <div class="rect rect-default">
-    <img class="sports-logo sfgiants" src="../images/sfgiants.png" border="0" alt="San Francisco Giants"/>
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
+  <div class="rect rect-default sports-standings sfgiants">
+    <!-- <img class="sports-logo sfgiants" src="../images/sfgiants.png" border="0" alt="San Francisco Giants"/> -->
+    <ul class="mlb-nl-west-standings inline">
+      <li class="team" ng-repeat="team in nlWestStandings">
+        {{team.team_short}}
+        
+        <span>{{team.gb}}</span>
+        <span>{{team.pct}}</span>
+        <span>{{team.l}}L</span>
+        <span>{{team.w}}W</span>
+        
+      </li>
+    </ul>
   </div>
   
-  <div class="rect rect-default">
-    <img class="sports-logo sf49ers" src="../images/sf49ers2.png" border="0" alt="San Francisco Giants"/>
-    <label class=""></label>
-    <h1 class="">
-      <span id=""></span>
-    </h1>
-
+  <div class="rect rect-default sports-standings sf49ers">
+    
   </div>
   
   <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[two.predictions[0] <= 3]">

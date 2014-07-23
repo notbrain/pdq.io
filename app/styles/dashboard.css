@@ -184,18 +184,7 @@ h1.muni-minutes {
   color: #CB7A01;
 }
 
-.sports-logo {
-  opacity: .3;
-  /*width: 120px;*/
-  margin-right: .15em;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-.sports-logo.sfgiants {
-  
-}
 
 /* D3 Graph */
 .axis path,
@@ -285,5 +274,61 @@ h1.muni-minutes {
 .today {
   color: #000;
   background-color: #D4F20D;
-  /*border: 1px solid #D4F20D;*/
 }
+
+.sports-standings {
+  color: #EFEFEF;
+}
+
+.sports-logo {
+  /*opacity: .3;*/
+  margin-right: .15em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.rect.sports-standings.sfgiants {
+  color: #E65019;
+  text-shadow: 2px 2px 0px rgba(0,0,0, 1);
+  background: black url(/images/sfgiants.png) center center no-repeat scroll;
+}
+
+.rect.sports-standings.sf49ers {
+  color: #AC2241;
+  background: black url(/images/sf49ers2.png) center center no-repeat scroll;
+}
+
+.sports-logo.sfgiants {
+  
+}
+
+.sports-standings ul {
+  z-index: 1000;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li.team {
+  background-color: rgba(0,0,0,.5);
+  margin: 0 0 0 0;
+  padding: .4em;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+li.team span {
+  float: right;
+  display: inline-block;
+  width: 15%;
+}
+
+.todaysDate h1 {
+  font-size: 48px;
+  text-align: center;
+  color: #DDD;
+}
+

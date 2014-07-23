@@ -40,7 +40,8 @@ app.use('/api/sfmuni',     require('./controllers/sfmuniAPI').controller)
 app.use('/api/blockchain', require('./controllers/blockchain').controller)
 app.use('/api/coinbase',   require('./controllers/coinbase').controller)
 app.use('/api/record',     require('./controllers/record').controller)
-app.use('/api/weather',     require('./controllers/weather').controller)
+app.use('/api/weather',    require('./controllers/weather').controller)
+app.use('/api/sports',     require('./controllers/sports').controller)
 
 // SERVER
 app.listen(port)
