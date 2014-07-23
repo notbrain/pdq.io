@@ -12,7 +12,7 @@ var router        = express.Router()
 
 router.use(function(req, res, next) {
   
-  var expires = moment().add('days',1).hour(2000).minute(0).second(0).format('ddd, DD MMM YYYY HH:mm:ss')
+  var expires = moment().minute(0).second(0).add('hours', 8).format('ddd, DD MMM YYYY HH:mm:ss')
   console.log(expires)
   
   res.set({
@@ -34,8 +34,6 @@ router.get('/mlb/nl',
     // http://sanfrancisco.giants.mlb.com/lookup/json/named.standings_all_league_repeater.bam?sit_code=%27h0%27&season=2014&standings_all.col_in=division_champ,place,wild_card,playoffs_flag_mlb,playoffs_sw,division_id,division,team_short,file_code,w,l,pct,gb&league_id=103&league_id=104
     
     request.get('http://sanfrancisco.giants.mlb.com/lookup/json/named.standings_all_league_repeater.bam?sit_code=%27h0%27&season=2014&standings_all.col_in=division_champ,place,wild_card,playoffs_flag_mlb,playoffs_sw,division_id,division,team_short,file_code,w,l,pct,gb&league_id=104', function(err, response, json){
-      
-      // console.log(body)
       
       res.json(JSON.parse(json))
       

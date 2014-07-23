@@ -36,12 +36,12 @@ app.all('*',function(req, res, next) {
 // 
 // app.use('/', require('./routes/public').router)
 // app.use('/auth', require('./routes/auth').router)
-app.use('/api/sfmuni',     require('./controllers/sfmuniAPI').controller)
-app.use('/api/blockchain', require('./controllers/blockchain').controller)
-app.use('/api/coinbase',   require('./controllers/coinbase').controller)
-app.use('/api/record',     require('./controllers/record').controller)
-app.use('/api/weather',    require('./controllers/weather').controller)
-app.use('/api/sports',     require('./controllers/sports').controller)
+app.use('/sfmuni',     require('./controllers/sfmuniAPI').controller)
+app.use('/blockchain', require('./controllers/blockchain').controller)
+app.use('/coinbase',   require('./controllers/coinbase').controller)
+app.use('/record',     require('./controllers/record').controller)
+app.use('/weather',    require('./controllers/weather').controller)
+app.use('/sports',     require('./controllers/sports').controller)
 
 // SERVER
 app.listen(port)
