@@ -20,7 +20,10 @@ router.use(function(req, res, next) {
     // 'Pragma': 'no-cache',
     // Thu, 01 Dec 1983 20:00:00 GMT
     // 'Expires': 0,
-    'Expires': expires + ' GMT'
+    'Expires': expires + ' GMT',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, DELETE, PUT',
+    'Access-Control-Allow-Headers': 'Authorization,content-type,accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since'
   });
   next()
 })
