@@ -19,14 +19,16 @@
     <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
     
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
+    <!-- build:css(.tmp) styles/vendor.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css" />
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="custombs/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/dashboard.css">
     <!-- endbuild -->
+    
   </head>
   <body ng-app="btcApp">
       
@@ -48,8 +50,6 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    
-    <script src="custombs/bootstrap/js/bootstrap.js"></script>
     
     <script src="scripts/app.js"></script>
     <script src="scripts/config.js"></script>

@@ -19,7 +19,7 @@ var port = process.env.NGXP4SEED_PORT || 3000
 
 var env  = process.env.NODE_ENV || 'dev'
 
-var db = require('./config/mongo').db
+// var db = require('./config/mongo').db
 
 app.all('*',function(req, res, next) {
   console.log('[console.log] %s %s %s', req.method, req.url, req.path)
@@ -36,6 +36,7 @@ app.all('*',function(req, res, next) {
 // 
 // app.use('/', require('./routes/public').router)
 // app.use('/auth', require('./routes/auth').router)
+app.use('/',           require('./controllers/apiRoot').controller)
 app.use('/sfmuni',     require('./controllers/sfmuniAPI').controller)
 app.use('/blockchain', require('./controllers/blockchain').controller)
 app.use('/coinbase',   require('./controllers/coinbase').controller)
