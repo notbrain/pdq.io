@@ -199,11 +199,10 @@ angular.module('btcApp')
   }
   
   $interval(function() {
-    refreshMuniData()
     refreshBlockchainData()
     refreshCoinbaseData()
     refreshWeatherForecast()
-  }, 120000)
+  }, 60000*5)
   
   refreshMuniData()
   refreshBlockchainData()
@@ -212,9 +211,12 @@ angular.module('btcApp')
   
   // time tick
   $interval(function() {
+    refreshMuniData()
     $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
+    $scope.todaysDate = moment().format('MMMM Do h:mma')
   }, 60000)
   
+  $scope.todaysDate = moment().format('MMMM Do h:mma')
   $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
   
   matrixCalendar()
@@ -223,8 +225,9 @@ angular.module('btcApp')
   var tzOffset = '-08:00'
   if(moment().isDST()) {
     tzOffset = '-07:00'
-  } 
-  $scope.todaysDate = moment().zone(tzOffset).format('MMMM Do h:mma')
+  }
+  
+  
   
   
   // $log.info('isDST',moment().isDST())

@@ -56,9 +56,9 @@ router.get('/historical',
       
     })
     
-    async.map(page_urls, fetch, function(err, results){
+    async.map(page_urls, fetch, function(err, results) {
       if (err){
-        // either file1, file2 or file3 has raised an error, so you should not use results and handle the error
+        console.log('async.map ERROR!!!')
         console.dir(err)
       } else {
         // results[0] -> "file1" body
