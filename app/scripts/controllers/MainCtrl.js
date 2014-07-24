@@ -11,9 +11,10 @@ angular.module('btcApp')
     
     if( !_.isUndefined(oldVal) && newVal !== oldVal ) {
       // store price for graph if new value
-      $log.info({newval: newVal, oldval: oldVal})
-      $http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
+      // $log.info({newval: newVal, oldval: oldVal})
+      //$http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
     }
+    
   }, true);
   
   var matrixCalendar = function() {
