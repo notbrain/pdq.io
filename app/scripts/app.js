@@ -34,5 +34,8 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });
-  });
+      })
+  })
+  .config(function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true
+  })
