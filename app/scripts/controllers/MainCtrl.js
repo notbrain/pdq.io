@@ -159,7 +159,16 @@ angular.module('btcApp')
   
   var refreshWeatherForecast = function(){
     
-    $http.get(APPCONFIG.apiHost + '/weather/forecast', null).success(function(response) {
+    var url = APPCONFIG.apiHost + '/weather/forecast'
+    
+    $http({
+      method: 'GET',
+      url: url,
+      responseType: 'json',
+      timeout: 10000
+    }).success(function(response) {
+    
+    // $http.get(APPCONFIG.apiHost + '/weather/forecast', null).success(function(response) {
       
       $scope.weatherForecast = response
       
@@ -177,11 +186,13 @@ angular.module('btcApp')
     
     // cache layer
     
+    var url = APPCONFIG.apiHost + '/sports/mlb/nl'
     $http({
       method: 'GET',
-      url: APPCONFIG.apiHost + '/sports/mlb/nl',
+      url: url,
       cache: true,
-      responseType: 'json'
+      responseType: 'json',
+      timeout: 10000
     }).success(function(response) {
       
       var standings = response.standings_all_league_repeater.standings_all.queryResults.row
@@ -213,23 +224,17 @@ angular.module('btcApp')
   $interval(function() {
     refreshMuniData()
     $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
-    $scope.todaysDate = moment().format('MMMM Do h:mma')
+    $scope.todaysDate  = moment().format('MMMM Do')
+    $scope.now         = moment().format('h:mma')
   }, 60000)
   
-  $scope.todaysDate = moment().format('MMMM Do h:mma')
+  $scope.todaysDate = moment().format('MMMM Do')
+  
   $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
+  
+  $scope.now = moment().format('h:mma')
   
   matrixCalendar()
   getMLBStandings()
-  
-  var tzOffset = '-08:00'
-  if(moment().isDST()) {
-    tzOffset = '-07:00'
-  }
-  
-  
-  
-  
-  // $log.info('isDST',moment().isDST())
   
 });

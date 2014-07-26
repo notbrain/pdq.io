@@ -5,6 +5,7 @@ body {
   width: 1920px;
   height: 1080px;
   overflow: hidden;
+  background: #242424 url(/images/ggb1920.jpg) top left no-repeat;
 }
 
 h1, h2, h3 {
@@ -57,6 +58,7 @@ h1 span {
   float: left;
   padding: 0;
   background-color: #050505;
+  background-color: rgba(5,5,5,.5);
 }
 
 .rect label {
@@ -128,14 +130,14 @@ h1 span {
 
 .graphCanvas {
   /*background-color: #111;*/
-  background: rgba(42,73,117,0);
-background: -moz-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
+  /*background: rgba(5,5,5,.5);*/
+/*background: -moz-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(42,73,117,1)), color-stop(29%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
 background: -webkit-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
 background: -o-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
 background: -ms-linear-gradient(top, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
 background: linear-gradient(to bottom, rgba(42,73,117,1) 0%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a4975', endColorstr='#000000', GradientType=0 );
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a4975', endColorstr='#000000', GradientType=0 );*/
 }
 
 label.muni-route {
@@ -244,6 +246,7 @@ h1.muni-minutes {
 
 .matrixCalendar {
   background-color: #333;
+  background-color: rgba(51,51,51,.5);
   /*padding: 2px 0 0 2px;*/
   line-height: 11px;
 }
@@ -258,7 +261,7 @@ h1.muni-minutes {
 .day {
   width: 11px;
   height: 14px;
-  background-color: #000;
+  background-color: rgba(0,0,0,.5);
   float: left;
   margin: 0px 1px 0px 0px;
   font-size: 9px;
@@ -269,6 +272,7 @@ h1.muni-minutes {
 
 .weekend {
   background-color: #3F3A30;
+  background-color: rgba(63,58,48,.5);
 }
 
 .today {
@@ -327,8 +331,12 @@ li.team span {
 }
 
 .todaysDate h1 {
-  font-size: 48px;
+  font-size: 84px;
   text-align: center;
-  color: #DDD;
+  color: #FFF789;
 }
 
+.now h1 {
+  text-align: center;
+  color: #FFF789;
+}
