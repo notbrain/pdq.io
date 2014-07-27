@@ -141,7 +141,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a4975', end
 }
 
 label.muni-route {
-  font-size: 240px;
+/*  font-size: 240px;
   float: left;
   margin: 0;
   padding: 0;
@@ -149,7 +149,14 @@ label.muni-route {
   color: #000;
   background-color: #242424;
   font-weight: 600;
-  z-index: 0;
+  z-index: 0;*/
+  font-family: 'Electronic Highway Sign';
+  font-family: 'Electronic Highway Sign';
+  font-family: 'Advanced LED Board-7';
+  text-shadow: 2px 2px 0px rgba(0,0,0, 1);
+  color: #E6D303;
+  font-size: 51px;
+  padding: .2em 0 0 .2em;
 }
 
 h1.muni-minutes {
