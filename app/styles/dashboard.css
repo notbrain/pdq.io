@@ -28,9 +28,11 @@ body {
   height: 1080px;
   overflow: hidden;
   background: #242424 url(/images/ggb1920.jpg) top left no-repeat;
+  color: #F0F0F0;
 }
 
 h1, h2, h3 {
+  font-family: 'Oxygen';
   text-align: right;
 }
 
@@ -81,6 +83,16 @@ h1 span {
   padding: 0;
   background-color: #050505;
   background-color: rgba(5,5,5,.5);
+  
+}
+
+.rect.coinbase h1,
+.rect.coinbase h2,
+.rect.coinbase h3,
+.rect.coinbase h4,
+.rect.coinbase h5,
+.rect.coinbase h6 {
+  color: #B3F200;
 }
 
 .rect label {
@@ -213,12 +225,12 @@ h1.muni-minutes {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #999;
+  stroke: #D4F20D;
   shape-rendering: crispEdges;
 }
 
 .tick {
-  fill: #999;
+  fill: #D4F20D;
   /*stroke: #999;*/
 }
 

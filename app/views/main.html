@@ -4,13 +4,13 @@
     <btc-graph></btc-graph>
   </div>
 
-  <div class="rect rect-default">
-    <label class="">Coinbase Gross</label>
+  <div class="rect rect-default coinbase">
+    <label class="">Coinbase Net</label>
     <h1 class="">
-      <sup>$</sup><span id="sellprice_gross">{{coinbase.subtotal.amount | number:0 }}</span>
+      <sup>$</sup><span id="sellprice_net">{{coinbase.amount | number:0 }}</span>
     </h1>
     <h2 class="">
-      <sup>$</sup><span id="sellprice_gross">{{coinbase.amount | number:0 }}</span>
+      <span id="sellprice_gross">{{coinbase.subtotal.amount | number:0 }}</span>
     </h2>
   </div>
   
