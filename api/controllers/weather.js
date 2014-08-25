@@ -23,11 +23,8 @@ router.use(function(req, res, next) {
   next()
 })
 
-router.get('/forecastOLD',
+router.get('/forecast',
   function(req, res) {
-    //f30c5e510b0f910bd35f540a9d1dec12
-    // 37.7857361,-122.4318036
-    // https://api.forecast.io/forecast/f30c5e510b0f910bd35f540a9d1dec12/37.7857361,-122.4318036
     request.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=San+Francisco&cnt=3&mode=json&units=imperial', function(err, response, body){
       
       console.log(body)
@@ -45,7 +42,7 @@ router.get('/forecastOLD',
     
 })
 
-router.get('/forecast',
+router.get('/forecastNEW',
   function(req, res) {
     //f30c5e510b0f910bd35f540a9d1dec12
     // 37.7857361,-122.4318036

@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'bpdotsregular';
-  src: url('fonts/BPdots-webfont.eot');
-  src: url('fonts/BPdots-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/BPdots-webfont.woff') format('woff'),
-       url('fonts/BPdots-webfont.ttf') format('truetype'),
-       url('fonts/BPdots-webfont.svg#bpdotsregular') format('svg');
+  src: url('/fonts/BPdots-webfont.eot');
+  src: url('/fonts/BPdots-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BPdots-webfont.woff') format('woff'),
+       url('/fonts/BPdots-webfont.ttf') format('truetype'),
+       url('/fonts/BPdots-webfont.svg#bpdotsregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'bpmonoregular';
-  src: url('fonts/BPmono-webfont.eot');
-  src: url('fonts/BPmono-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/BPmono-webfont.woff') format('woff'),
-       url('fonts/BPmono-webfont.ttf') format('truetype'),
-       url('fonts/BPmono-webfont.svg#bpmonoregular') format('svg');
+  src: url('/fonts/BPmono-webfont.eot');
+  src: url('/fonts/BPmono-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BPmono-webfont.woff') format('woff'),
+       url('/fonts/BPmono-webfont.ttf') format('truetype'),
+       url('/fonts/BPmono-webfont.svg#bpmonoregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
