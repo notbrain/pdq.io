@@ -1,6 +1,6 @@
 <div ng-controller="MainCtrl">
   
-  <div class="rect rect-2w">
+  <div class="rect rect-3w">
     <btc-graph></btc-graph>
   </div>
 
@@ -9,16 +9,19 @@
     <h1 class="">
       <sup>$</sup><span id="sellprice_gross">{{coinbase.subtotal.amount | number:0 }}</span>
     </h1>
+    <h2 class="">
+      <sup>$</sup><span id="sellprice_gross">{{coinbase.amount | number:0 }}</span>
+    </h2>
   </div>
   
-  <div class="rect rect-default">
+<!--   <div class="rect rect-default">
     
     <label class="">Coinbase Net</label>
     <h1 class="">
       <sup>$</sup><span id="sellprice_net">{{coinbase.amount | number:0 }}</span>
     </h1>
     
-  </div>
+  </div> -->
   
   <div class="rect rect-default">
     
@@ -138,10 +141,10 @@
 
   <div class="rect rect-default todaysDate">
     
-    <label class="">Today is</label>
-    <h1 class="">
-      <span class="todaysDate">{{todaysDate}}</span>
-    </h1>
+    <div class="now">{{dayOfWeek}}</div>
+    <div class="now">{{todaysDate}}</div>
+    <div class="now">{{now}}</div>
+    
 
   </div>
 
@@ -150,7 +153,7 @@
     
     <label class="">&nbsp;</label>
     <h1 class="">
-      <span class="now">{{now}}</span>
+      <!-- <span class="now">{{now}}</span> -->
     </h1>
 
   </div>
@@ -216,7 +219,7 @@
   <div class="rect rect-default korean-flag">
     <label class="">&nbsp;</label>
     <h1 class="">
-      <span id="koreanDateTime" class="shortDayTime">{{dateTimeKST}}</span>
+      <span id="koreanDateTime" class="now">{{dateTimeKST}}</span>
     </h1>
   </div>
   

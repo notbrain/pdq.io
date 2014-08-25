@@ -209,31 +209,38 @@ angular.module('btcApp')
     
   }
   
-  $interval(function() {
+  var onceAMinute = function() {
+    
+    refreshMuniData()
+    
+    var now = moment()
+    
+    $scope.todaysDate  = now.format('MMM D')
+    $scope.now         = now.format('h:mma')
+    $scope.dayOfWeek   = now.format('dddd')
+    $scope.dateTimeKST = now.zone('+09:00').format('dddd, HH:mm')
+    
+  }
+  
+  var everyFiveMinutes = function() {
+    
     refreshBlockchainData()
     refreshCoinbaseData()
     refreshWeatherForecast()
-  }, 60000*5)
-  
-  refreshMuniData()
-  refreshBlockchainData()
-  refreshCoinbaseData()
-  refreshWeatherForecast()
+    
+  }
   
   // time tick
   $interval(function() {
-    refreshMuniData()
-    $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
-    $scope.todaysDate  = moment().format('MMMM Do')
-    $scope.now         = moment().format('h:mma')
+    onceAMinute()
   }, 60000)
   
-  $scope.todaysDate = moment().format('MMMM Do')
+  $interval(function() {
+    everyFiveMinutes()
+  }, 60000*5)
   
-  $scope.dateTimeKST = moment().zone('+09:00').format('dddd, HH:mm')
-  
-  $scope.now = moment().format('h:mma')
-  
+  everyFiveMinutes()
+  onceAMinute()
   matrixCalendar()
   getMLBStandings()
   
