@@ -234,6 +234,10 @@ h1.muni-minutes {
   /*stroke: #999;*/
 }
 
+.y.axis .tick text {
+  font-size: 150%;
+}
+
 .axis path {
   display: none;
 }

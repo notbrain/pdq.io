@@ -11,7 +11,7 @@ angular.module('btcApp').directive('btcGraph', function($log, APPCONFIG) {
       
       $log.info('[btcGraph#link:]')
       
-      var margin = {top: 0, right: 0, bottom: 20, left: 35},
+      var margin = {top: 0, right: 0, bottom: 30, left: 75},
           width = 1144 - margin.left - margin.right,
           height = 210 - margin.top - margin.bottom
 
