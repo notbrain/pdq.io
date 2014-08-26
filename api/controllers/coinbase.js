@@ -41,8 +41,30 @@ var fetch = function(url,cb){
   })
 }
 
+router.get('/historical2', function(req, res){
+  
+  console.log('/coinbase/historical2')
+  
+  var historical_url = 'https://coinbase.com/api/v1/prices/historical'
+    
+  var pages = [1,2,3,4,5]
+  
+  var page_urls = []
+  
+  _.forEach(pages, function(num, idx) {
+    
+    page_urls[idx] = historical_url + '?page=' + num
+    
+  })
+  
+  
+  
+})
+
 router.get('/historical',
   function(req, res) {
+    
+    console.log('/coinbase/historical')
     
     var historical_url = 'https://coinbase.com/api/v1/prices/historical'
     
@@ -57,10 +79,13 @@ router.get('/historical',
     })
     
     async.map(page_urls, fetch, function(err, results) {
+      
       if (err){
         console.log('async.map ERROR!!!')
         console.dir(err)
+        
       } else {
+        
         // results[0] -> "file1" body
         // results[1] -> "file2" body
         // results[2] -> "file3" body

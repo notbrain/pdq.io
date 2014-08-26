@@ -25,31 +25,47 @@ router.use(function(req, res, next) {
 
 router.get('/forecast',
   function(req, res) {
+    
+    console.log('/weather/forecast')
+    
     request.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=San+Francisco&cnt=3&mode=json&units=imperial', function(err, response, body){
       
-      console.log(body)
+      var json = {}
+      var forecast = {}
       
-      var json = JSON.parse(body)
+      if(_.isEmpty(body)) {
+        
+        console.log('FORECAST DATA EMPTY JSON BODY')
+        
+      } else {
+        
+        json = JSON.parse(body)
       
-      var forecast = {
-        'day1': json.list[0],
-        'day2': json.list[1],
-        'day3': json.list[2]
+        forecast = {
+          'day1': json.list[0],
+          'day2': json.list[1],
+          'day3': json.list[2]
+        }
+        
       }
       
-      res.json(forecast)
+      res.json(200, forecast)
+      
     })
     
 })
 
 router.get('/forecastNEW',
   function(req, res) {
+    
+    // console.log('/weather//forecastNEW')
+    
     //f30c5e510b0f910bd35f540a9d1dec12
     // 37.7857361,-122.4318036
     // https://api.forecast.io/forecast/f30c5e510b0f910bd35f540a9d1dec12/37.7857361,-122.4318036
     request.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=San+Francisco&cnt=3&mode=json&units=imperial', function(err, response, body){
       
-      console.log(body)
+      // console.log(body)
       
       var json = JSON.parse(body)
       
