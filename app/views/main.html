@@ -184,7 +184,7 @@
     
   </div>
   
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[two.predictions[0] <= 3]">
+  <div class="rect rect-default" ng-class="{'muni-critical':two.predictions[0] <= 3, 'muni-relax':two.predictions[0] > 3, 'not-running':two.predictions[0] === '-'}">
     <label class="muni-route">2 INBOUND</label>
     <h1 class="muni-minutes">
       <span class="next">{{two.predictions[0]}}</span>
@@ -192,10 +192,10 @@
     </h1>
   </div>
 
-  <div class="rect rect-default" ng-class="{true:'muni-critical', false:'muni-relax'}[three.predictions[0] <= 3]">
+  <div class="rect rect-default" ng-class="{'muni-critical':three.predictions[0] <= 3, 'muni-relax':three.predictions[0] > 3, 'not-running':three.predictions[0] === '-'}">
     <label class="muni-route">3 INBOUND</label>
     <h1 class="muni-minutes">
-      <span class="next">{{three.predictions[0]}}</span>    
+      <span class="next">{{three.predictions[0]}}</span>  
       <span class="nextnext">{{three.predictions[1]}}</span>
     </h1>
   </div>

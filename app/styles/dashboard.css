@@ -219,7 +219,14 @@ h1.muni-minutes {
   color: #CB7A01;
 }
 
+.not-running label {
+  color: #555;
+}
 
+.not-running .next,
+.not-running .nextnext {
+  visibility: hidden;
+}
 
 /* D3 Graph */
 .axis path,

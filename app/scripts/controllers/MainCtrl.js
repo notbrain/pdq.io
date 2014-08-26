@@ -135,6 +135,22 @@ angular.module('btcApp')
           }
       })
       
+    }).then(function(){
+      
+      if(_.isNull($scope.two.predictions)) {
+        $scope.two = {
+          predictions: ['-','-']
+        }
+        
+      }
+      
+      if(_.isNull($scope.three.predictions)) {
+        $scope.three = {
+          predictions: ['-','-']
+        }
+        
+      }
+      
     })
     
     $http.get(APPCONFIG.apiHost + '/sfmuni/4640', null).success(function(response) {
@@ -145,6 +161,16 @@ angular.module('btcApp')
           }
       })
       
+    }).then(function(){
+      
+      if(_.isNull($scope.twentyTwo.predictions)) {
+        
+        $scope.twentyTwo = {
+          predictions: ['-','-']
+        }
+        
+      }
+      
     })
     
     $http.get(APPCONFIG.apiHost + '/sfmuni/4296', null).success(function(response) {
@@ -154,6 +180,13 @@ angular.module('btcApp')
             return true
           }
       })
+    }).then(function(){
+      if(_.isNull($scope.thirtyEight.predictions)) {
+        $scope.thirtyEight = {
+          predictions: ['-','-']
+        }
+        
+      }
     })
   }
   
@@ -239,9 +272,13 @@ angular.module('btcApp')
     everyFiveMinutes()
   }, 60000*5)
   
+  
   everyFiveMinutes()
   onceAMinute()
+  
+  // hourly on meta refresh
   matrixCalendar()
   getMLBStandings()
+  
   
 });

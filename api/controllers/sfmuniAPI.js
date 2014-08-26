@@ -22,8 +22,6 @@ apiController.use(function(req, res, next) {
 apiController.get('/:stopNumber',
   function(req, res) {
     
-    console.log('muni/' + stopnumber)
-    
     sfmuni.cacheAgency('sf-muni', function (err) {
       if (err) {
         console.log(' ➺ muni failure')
@@ -34,6 +32,7 @@ apiController.get('/:stopNumber',
       } else {
         
         sfmuni.stopPredict(req.params.stopNumber, null, function (err, data) {
+          console.log(' ➺ muni failure')
           console.dir(err)
           
           res.json(data)
