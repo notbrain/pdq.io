@@ -181,7 +181,7 @@ angular.module('btcApp')
           }
       })
     }).then(function(){
-      if(_.isNull($scope.thirtyEight.predictions)) {
+      if(_.isUndefined($scope.thirtyEight) || _.isNull($scope.thirtyEight.predictions)) {
         $scope.thirtyEight = {
           predictions: ['-','-']
         }
