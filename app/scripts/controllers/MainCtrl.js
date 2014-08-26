@@ -272,7 +272,7 @@ angular.module('btcApp')
   }, 60000*15)
   
   
-  everyFiveMinutes()
+  everyFifteenMinutes()
   onceAMinute()
   
   // hourly on meta refresh
