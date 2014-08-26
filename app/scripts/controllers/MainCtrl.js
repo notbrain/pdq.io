@@ -255,11 +255,10 @@ angular.module('btcApp')
     
   }
   
-  var everyFiveMinutes = function() {
+  var everyFifteenMinutes = function() {
     
     refreshBlockchainData()
     refreshCoinbaseData()
-    refreshWeatherForecast()
     
   }
   
@@ -269,8 +268,8 @@ angular.module('btcApp')
   }, 60000)
   
   $interval(function() {
-    everyFiveMinutes()
-  }, 60000*5)
+    everyFifteenMinutes()
+  }, 60000*15)
   
   
   everyFiveMinutes()
@@ -279,6 +278,7 @@ angular.module('btcApp')
   // hourly on meta refresh
   matrixCalendar()
   getMLBStandings()
+  refreshWeatherForecast()
   
   
 });
