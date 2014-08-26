@@ -22,36 +22,23 @@ apiController.use(function(req, res, next) {
 apiController.get('/:stopNumber',
   function(req, res) {
     
+    console.log('muni/' + stopnumber)
+    
     sfmuni.cacheAgency('sf-muni', function (err) {
       if (err) {
-        throw err;
+        console.log(' ➺ muni failure')
+        console.dir(err)
+        // throw err
+        res.status(500)
+        
       } else {
         
         sfmuni.stopPredict(req.params.stopNumber, null, function (err, data) {
-          // console.dir(err)
-          console.dir(data)
+          console.dir(err)
           
           res.json(data)
           
-        }, 'minutes');
-        
-        // sfmuni.stopPredict(6592, null, function (err, data) {
-        //   // console.dir(err)
-        //   console.dir(data)
-        // }, 'minutes');
-        
-        // sfmuni.stopPredict(4640, null, function (err, data) {
-        //   // console.dir(err)
-        //   console.dir(data)
-        // }, 'minutes');
-        
-        // sfmuni.stopPredict(4296, null, function (err, data) {
-        //   // console.dir(err)
-        //   console.dir(data)
-        // }, 'minutes');
-        
-        // var nearest = sfmuni.closestStops(37.7856142,-122.4331905);
-        // console.dir(nearest)
+        }, 'minutes')
         
       }
     });
