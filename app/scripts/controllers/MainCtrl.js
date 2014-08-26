@@ -137,14 +137,14 @@ angular.module('btcApp')
       
     }).then(function(){
       
-      if(_.isNull($scope.two.predictions)) {
+      if(_.isUndefined($scope.two) || _.isNull($scope.two.predictions)) {
         $scope.two = {
           predictions: ['-','-']
         }
         
       }
       
-      if(_.isNull($scope.three.predictions)) {
+      if(_.isUndefined($scope.three) || _.isNull($scope.three.predictions)) {
         $scope.three = {
           predictions: ['-','-']
         }
@@ -163,7 +163,7 @@ angular.module('btcApp')
       
     }).then(function(){
       
-      if(_.isNull($scope.twentyTwo.predictions)) {
+      if(_.isUndefined($scope.twentyTwo) || _.isNull($scope.twentyTwo.predictions)) {
         
         $scope.twentyTwo = {
           predictions: ['-','-']
