@@ -368,6 +368,8 @@ li.team {
   padding: .4em;
   font-size: 18px;
   line-height: 26px;
+  font-weight: 100;
+  font-family: 'Helvetica Neue';
 }
 
 li.team span {
