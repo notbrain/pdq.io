@@ -113,6 +113,17 @@ angular.module('btcApp')
       $scope.twentybtcnet = (response.amount * 20) / 1000
       
     })
+    
+  }
+  
+  var refreshCoinbaseHistoricalData = function() {
+    
+    $http.get(APPCONFIG.apiHost + '/coinbase/historical').success(function(response) {
+      
+      $scope.historicalData = response
+      
+    })
+    
   }
   
   var refreshMuniData = function() {
@@ -259,6 +270,7 @@ angular.module('btcApp')
     
     refreshBlockchainData()
     refreshCoinbaseData()
+    refreshCoinbaseHistoricalData()
     
   }
   

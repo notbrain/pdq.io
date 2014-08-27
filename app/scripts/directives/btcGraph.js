@@ -1,15 +1,34 @@
 'use strict';
 
-angular.module('btcApp').directive('btcGraph', function($log, APPCONFIG) {
+angular.module('btcApp').directive('btcGraph', function($log) {
   // $log.info('[btcGraph]')
   return {
     templateUrl: 'views/_btcGraph.html',
     restrict: 'E',
     transclude: true,
     replace: true,
-    link: function() { // attrs
+    scope: {
+      graphData: '='
+    },
+    link: function(scope) { // attrs
       
       $log.info('[btcGraph#link:]')
+      
+      scope.$watch('graphData', function(newVal, oldVal) {
+        
+        $log.debug('$watching historical data')
+        
+        if(!_.isEqual(newVal, oldVal) && !_.isEmpty(newVal)) {
+          
+          $log.debug('CHANGED, re-render')
+          
+          $log.debug(newVal)
+          
+          render(newVal)
+          
+        }
+        
+      })
       
       var margin = {top: 0, right: 0, bottom: 30, left: 75},
           width = 1144 - margin.left - margin.right,
@@ -43,16 +62,15 @@ angular.module('btcApp').directive('btcGraph', function($log, APPCONFIG) {
           .attr('height', height + margin.top + margin.bottom)
         .append('g')
           .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-
-      d3.json(APPCONFIG.apiHost + '/coinbase/historical', function(error, data) {
+      
+      var render = function(data) {
         
-        if(error) {$log.error(error)}
-        
+        // d3.json(APPCONFIG.apiHost + '/coinbase/historical', function(error, data) {
+          
+        // })
         var dataPoints = 0
         data.forEach(function(d) {
           dataPoints++
-          // $log.info('raw: ' + d.date + ' parsed: ' + parseDate(d.date))
-          
           d.date = parseDate(d.date)
           d.price = 0+d.price
           
@@ -82,7 +100,10 @@ angular.module('btcApp').directive('btcGraph', function($log, APPCONFIG) {
             .datum(data)
             .attr('class', 'line')
             .attr('d', line)
-      })
+        
+      }
+      
+      
       
     }
     

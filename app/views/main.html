@@ -1,7 +1,7 @@
 <div ng-controller="MainCtrl">
   
   <div class="rect rect-3w">
-    <btc-graph></btc-graph>
+    <btc-graph graph-data="historicalData"></btc-graph>
   </div>
 
   <div class="rect rect-default coinbase">
@@ -139,21 +139,17 @@
 
   </div>
 
-  <div class="rect rect-default todaysDate">
+  <div class="rect rect-3w todaysDate">
     
-    <div class="now">{{dayOfWeek}}</div>
-    <div class="now">{{todaysDate}}</div>
-    <div class="now">{{now}}</div>
+    <div class="now">{{now}} {{dayOfWeek}}, {{todaysDate}}</div>
     
-
   </div>
 
-
-  <div class="rect rect-default now">
+<!--   <div class="rect rect-default now">
     
     <label class="">&nbsp;</label>
     <h1 class="">
-      <!-- <span class="now">{{now}}</span> -->
+      <span class="now">{{now}}</span>
     </h1>
 
   </div>
@@ -163,7 +159,7 @@
     <h1 class="">
       <span id=""></span>
     </h1>
-  </div>
+  </div> -->
 
   <div class="rect rect-default sports-standings sfgiants">
     <!-- <img class="sports-logo sfgiants" src="../images/sfgiants.png" border="0" alt="San Francisco Giants"/> -->

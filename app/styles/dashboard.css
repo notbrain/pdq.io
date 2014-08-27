@@ -155,6 +155,7 @@ h1 span {
 
 .rect.korean-flag h1 {
   text-align: center;
+  line-height: 40px;
 }
 #koreanDateTime {
   font-size: 50px;
@@ -375,16 +376,18 @@ li.team span {
   width: 15%;
 }
 
-.todaysDate h1 {
+/*.todaysDate h1 {
   font-size: 64px;
   text-align: center;
   color: #D4F20D;
   font-family: 'bpmonoregular';
-}
+}*/
 
 .now {
-  font-size: 48px;
+  font-size: 72px;
+  line-height: 210px;
   text-align: center;
-  color: #D4F20D;
-  font-family: 'bpmonoregular';
+  color: #B4C5DF;
+  font-weight: 100;
+  font-family: 'Lato';
 }
