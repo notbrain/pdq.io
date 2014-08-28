@@ -161,6 +161,10 @@
     </h1>
   </div> -->
 
+  <div class="rect rect-default sports-standings">
+    
+  </div>
+  
   <div class="rect rect-default sports-standings sfgiants">
     <!-- <img class="sports-logo sfgiants" src="../images/sfgiants.png" border="0" alt="San Francisco Giants"/> -->
     <ul class="mlb-nl-west-standings inline">
@@ -174,10 +178,6 @@
         
       </li>
     </ul>
-  </div>
-  
-  <div class="rect rect-default sports-standings sf49ers">
-    
   </div>
   
   <div class="rect rect-default" ng-class="{'muni-critical':two.predictions[0] <= 3, 'muni-relax':two.predictions[0] > 3, 'not-running':two.predictions[0] === '-'}">
@@ -213,9 +213,8 @@
   </div>
 
   <div class="rect rect-default korean-flag">
-    <label class="">&nbsp;</label>
-    <h1 class="">
-      <span id="koreanDateTime" class="now">{{dateTimeKST}}</span>
+    <h1>
+      {{dateTimeKST}}
     </h1>
   </div>
   

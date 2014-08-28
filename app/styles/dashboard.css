@@ -31,6 +31,8 @@ body {
   color: #F0F0F0;
 }
 
+
+
 h1, h2, h3 {
   font-family: 'Oxygen';
   text-align: right;
@@ -150,18 +152,17 @@ h1 span {
 
 .rect.korean-flag {
   background: transparent url(/images/flags-korean.png) 0px -12px no-repeat scroll;
-  /*zoom: 1.5;*/
+  padding: 0;
 }
 
 .rect.korean-flag h1 {
   text-align: center;
-  line-height: 40px;
-}
-#koreanDateTime {
   font-size: 50px;
+  line-height: 210px;
   color: #DFD877;
+  margin: 0;
+  padding: 0;
 }
-
 
 .graphCanvas {
   /*background-color: #111;*/

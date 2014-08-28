@@ -262,7 +262,7 @@ angular.module('btcApp')
     $scope.todaysDate  = now.format('MMM D')
     $scope.now         = now.format('h:mma')
     $scope.dayOfWeek   = now.format('dddd')
-    $scope.dateTimeKST = now.zone('+09:00').format('dddd, HH:mm')
+    $scope.dateTimeKST = now.zone('+09:00').format('ddd, HH:mm')
     
   }
   
