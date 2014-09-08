@@ -1,3 +1,3 @@
 ## information dashboard
 
-![Dashboard Screenshot](http://bridev.com/i/2014-07-30_10-34-13.png)
+![Dashboard Screenshot](http://bridev.com/i/pdqio_readme_screenshot_2014-09-07_1842.png)
