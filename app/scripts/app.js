@@ -17,7 +17,11 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/default.html',
+        controller: 'MainCtrl'
+      })
+      .when('/theme/sf', {
+        templateUrl: 'views/sanfrancisco.html',
         controller: 'MainCtrl'
       })
       .when('/about', {

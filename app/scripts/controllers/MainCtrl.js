@@ -260,7 +260,8 @@ angular.module('btcApp')
     var now = moment()
     
     $scope.todaysDate  = now.format('MMM D')
-    $scope.now         = now.format('h:mma')
+    $scope.now         = now.format('h:mm')
+    $scope.ampm        = now.format('a')
     $scope.dayOfWeek   = now.format('dddd')
     $scope.dateTimeKST = now.zone('+09:00').format('ddd, HH:mm')
     
@@ -274,16 +275,6 @@ angular.module('btcApp')
     
   }
   
-  // time tick
-  $interval(function() {
-    onceAMinute()
-  }, 60000)
-  
-  $interval(function() {
-    everyFifteenMinutes()
-  }, 60000*15)
-  
-  
   everyFifteenMinutes()
   onceAMinute()
   
@@ -292,5 +283,13 @@ angular.module('btcApp')
   getMLBStandings()
   refreshWeatherForecast()
   
+  // time tick
+  $interval(function() {
+    onceAMinute()
+  }, 60000)
+  
+  $interval(function() {
+    everyFifteenMinutes()
+  }, 60000*15)
   
 });

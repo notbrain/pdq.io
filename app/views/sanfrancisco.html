@@ -1,0 +1,63 @@
+<div class="canvas1080p theme-sanfrancisco" ng-controller="MainCtrl">
+  
+  <div class="btc grouping">
+    
+    <div id="sellprice_net">
+      <sup class="currency-symbol">$</sup>{{coinbase.amount | number:0 }} <label>Sell</label>
+    </div>
+    <div id="sellprice_gross">
+      <sup class="currency-symbol">$</sup>{{coinbase.subtotal.amount | number:0 }} <label>Buy</label>
+    </div>
+    <div id="value_20_btc">
+      <sup class="currency-symbol">$</sup>{{twentybtcnet*1000*1.5 | number:0 }} <label>30BTC Net</label>
+    </div>
+    <div id="volume" class="blockchain">
+      {{transactioncount | number:0}} <label>Vol</label>
+    </div>
+    
+  </div>
+  
+  <div class="weather grouping">
+    
+    <div class="2day">
+      <span class="degreesF high">{{weatherForecast.day1.temp.max | number:0 }}&deg;</span> &#x2194;
+      <span class="degreesF low">{{weatherForecast.day1.temp.min | number:0 }}&deg;</span>
+    </div>
+    <div>
+      <span class="degreesF high">{{weatherForecast.day2.temp.max | number:0 }}&deg;</span> &#x2194;
+      <span class="degreesF low">{{weatherForecast.day2.temp.min | number:0 }}&deg;</span>
+    </div>
+    <div>
+      <span class="degreesF high">{{weatherForecast.day3.temp.max | number:0 }}&deg;</span> &#x2194;
+      <span class="degreesF low">{{weatherForecast.day3.temp.min | number:0 }}&deg;</span>
+    </div>
+    
+  </div>
+  
+  <div class="muni grouping">
+  
+    <div>
+      <label>2</label>
+      <span>{{two.predictions[0]}}</span>
+    </div>
+    
+    <div>
+      <label>3</label>
+      <span>{{three.predictions[0]}}</span>
+    </div>
+    
+    <div>
+      <label>22</label>
+      <span>{{twentyTwo.predictions[0]}}</span>
+    </div>
+    
+  </div>
+  
+  <div class="date grouping">
+    
+    <h3>{{dayOfWeek}}, {{todaysDate}}</h3>
+    <h1>{{now}}<span class="ampm">{{ampm}}</span></h1>
+    
+  </div>
+  
+</div>

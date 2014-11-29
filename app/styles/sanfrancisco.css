@@ -1,0 +1,114 @@
+body {
+  font-family: 'roboto';
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.currency-symbol {
+  font-size: 32px;
+  line-height: 72px;
+}
+
+.ampm {
+  font-size: 48px;
+  line-height: 48px;
+  color: #A1A1A1;
+  margin: 0;
+  padding: 0;
+}
+
+.canvas1080p {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+}
+
+.theme-sanfrancisco * {
+  font-family: 'roboto';
+  font-weight: 100;
+  color: #f1f1f1;
+}
+
+.theme-sanfrancisco h1,
+.theme-sanfrancisco h2,
+.theme-sanfrancisco h3,
+.theme-sanfrancisco h4,
+.theme-sanfrancisco h5,
+.theme-sanfrancisco h6 {
+  font-family: 'roboto';
+  font-weight: 100;
+  color: #f1f1f1;
+}
+
+.theme-sanfrancisco .grouping {
+  float: right;
+  margin-right: .5em;
+  margin-left: .5em;
+  font-size: 60px;
+}
+
+.theme-sanfrancisco .btc.grouping div {
+  text-align: right;
+}
+
+.theme-sanfrancisco .btc.grouping label {
+  display: block;
+  color: #A1A1A1;
+  font-size: 32px;
+  text-align: right;
+  margin-top: -20px;
+}
+
+.theme-sanfrancisco .muni.grouping {
+  position: absolute;
+  top: .5em;
+  left: 0;
+  font-size: 72px;
+}
+
+.theme-sanfrancisco .muni.grouping div {
+  text-align: right;
+}
+
+.theme-sanfrancisco .muni.grouping label {
+  float: left;
+}
+
+.theme-sanfrancisco .date.grouping {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0;
+}
+
+.theme-sanfrancisco .date.grouping h1 {
+  
+  font-size: 230px;
+  line-height: 230px;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-sanfrancisco .date.grouping h3 {
+  font-size: 100px;
+  line-height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-sanfrancisco .muni.grouping label {
+  min-width: 70px;
+  display: inline-block;
+  color: #F2E00C;
+  font-size: 48px;
+  text-align: left;
+}
+
+.theme-sanfrancisco .weather {
+  position: absolute;
+  left: 0em;
+  bottom: .5em;
+}
+
+.theme-sanfrancisco .muni {
+  margin-left: .5em;
+  font-size: 60px;
+}
