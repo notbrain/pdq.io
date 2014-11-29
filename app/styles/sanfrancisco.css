@@ -14,6 +14,7 @@ body {
   color: #A1A1A1;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 
 .canvas1080p {
@@ -50,26 +51,43 @@ body {
   text-align: right;
 }
 
+#sellprice_net {
+  font-size: 120px;
+}
+#sellprice_net .currency-symbol {
+  font-size: 60px;
+}
+
 .theme-sanfrancisco .btc.grouping label {
   display: block;
-  color: #A1A1A1;
+  color: #C5C06C;
   font-size: 32px;
   text-align: right;
   margin-top: -20px;
+  font-weight: 300;
 }
 
 .theme-sanfrancisco .muni.grouping {
   position: absolute;
   top: .5em;
   left: 0;
-  font-size: 72px;
 }
 
 .theme-sanfrancisco .muni.grouping div {
+  font-size: 120px;
   text-align: right;
+  font-weight: 300;
+  min-height: 120px;
+  min-width: 120px;
+  background-color: rgba(0,0,0, 0.75);
+  padding: 0.25em;
+  margin-bottom: 0.125em;
+  border-radius: 28px;
 }
 
 .theme-sanfrancisco .muni.grouping label {
+  font-size: 80px;
+  font-weight: 300;
   float: left;
 }
 
