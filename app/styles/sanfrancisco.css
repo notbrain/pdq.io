@@ -120,13 +120,28 @@ body {
   text-align: left;
 }
 
-.theme-sanfrancisco .weather {
+.theme-sanfrancisco .weather.grouping {
   position: absolute;
   left: 0em;
   bottom: .5em;
+}
+
+.theme-sanfrancisco .weather.grouping div.daypod {
+  float: left;
+  /*width: 256px;*/
+  background-color: rgba(0,0,0, 0.55);
+  padding: 0.25em;
+  margin-right: 0.125em;
+  border-radius: 28px;
+}
+
+.theme-sanfrancisco .weather.grouping div label {
+  float: left;
+  font-size: 32px;
 }
 
 .theme-sanfrancisco .muni {
   margin-left: .5em;
   font-size: 60px;
 }
+

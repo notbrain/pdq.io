@@ -19,17 +19,8 @@
   
   <div class="weather grouping">
     
-    <div class="2day">
-      <span class="degreesF high">{{weatherForecast.day1.temp.max | number:0 }}&deg;</span> &#x2194;
-      <span class="degreesF low">{{weatherForecast.day1.temp.min | number:0 }}&deg;</span>
-    </div>
-    <div>
-      <span class="degreesF high">{{weatherForecast.day2.temp.max | number:0 }}&deg;</span> &#x2194;
-      <span class="degreesF low">{{weatherForecast.day2.temp.min | number:0 }}&deg;</span>
-    </div>
-    <div>
-      <span class="degreesF high">{{weatherForecast.day3.temp.max | number:0 }}&deg;</span> &#x2194;
-      <span class="degreesF low">{{weatherForecast.day3.temp.min | number:0 }}&deg;</span>
+    <div class="daypod" ng-repeat="day in weather.daily.data">
+      <canvas id="skycon-{{$index}}" width="96" height="96"></canvas>
     </div>
     
   </div>

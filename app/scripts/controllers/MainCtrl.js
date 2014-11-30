@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('btcApp')
-.controller('MainCtrl', function ($window, $log, $scope, $http, $interval, APPCONFIG) {
+.controller('MainCtrl', function ($window, $log, $scope, $http, $interval, $timeout, APPCONFIG) {
   
   $log.info('[MainCtrl]')
+  
+  
   
   $scope.$watch('coinbase', function(newVal, oldVal) {
     
@@ -118,6 +120,8 @@ angular.module('btcApp')
   
   var refreshCoinbaseHistoricalData = function() {
     
+    $log.info('[refreshCoinbaseHistoricalData]')
+    
     $http.get(APPCONFIG.apiHost + '/coinbase/historical').success(function(response) {
       
       $scope.historicalData = response
@@ -203,7 +207,9 @@ angular.module('btcApp')
   
   var refreshWeatherForecast = function(){
     
-    var url = APPCONFIG.apiHost + '/weather/forecast'
+    $log.info('[refreshWeatherForecast]')
+    
+    var url = APPCONFIG.apiHost + '/weather/v2/forecast'
     
     $http({
       method: 'GET',
@@ -211,16 +217,30 @@ angular.module('btcApp')
       responseType: 'json',
       timeout: 10000
     }).success(function(response) {
-    
-    // $http.get(APPCONFIG.apiHost + '/weather/forecast', null).success(function(response) {
       
-      $scope.weatherForecast = response
+      $log.debug(response)
       
-      $scope.tomorrowHeading = moment(response.day1.dt, 'X').format('dddd, MMMM D')
+      $scope.weather = response
       
-      $scope.twoDaysFromNow = moment(response.day2.dt, 'X').format('dddd, MMMM D')
+      $log.info('[render Skycons]')
       
-      $scope.threeDaysFromNow = moment(response.day3.dt, 'X').format('dddd, MMMM D')
+      var skycons = new Skycons({"color": "#DEFFC2"});
+      
+      // skycons.add("skycon-today", response.current.icon);
+      // skycons.add("skycon-tomorrow", response.day1.icon);
+      // skycons.add("skycon-2days", response.day2.icon);
+      
+      // $log.debug('response.current.icon', response.current.icon)
+      // $log.debug('response.day1.icon', response.day1.icon)
+      // $log.debug('response.day2.icon', response.day2.icon)
+      
+      
+      $timeout(function() {
+        _.forEach(response.daily.data, function(datum, idx){
+          skycons.add("skycon-" + idx, datum.icon);
+        })
+        skycons.play();
+      }, 3000)
       
     })
     
@@ -275,13 +295,13 @@ angular.module('btcApp')
     
   }
   
-  everyFifteenMinutes()
-  onceAMinute()
   
   // hourly on meta refresh
   // matrixCalendar()
   // getMLBStandings()
   refreshWeatherForecast()
+  everyFifteenMinutes()
+  onceAMinute()
   
   // time tick
   $interval(function() {
