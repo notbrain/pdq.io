@@ -224,9 +224,9 @@ angular.module('btcApp')
       
       var skycons = new Skycons({"color": "#e9e9e9"});
       
-      skycons.add("skycon-today", response.current.icon);
-      skycons.add("skycon-tomorrow", response.day1.icon);
-      skycons.add("skycon-2days", response.day2.icon);
+      // skycons.add("skycon-today", response.current.icon);
+      // skycons.add("skycon-tomorrow", response.day1.icon);
+      // skycons.add("skycon-2days", response.day2.icon);
       
       $log.debug('response.current.icon', response.current.icon)
       $log.debug('response.day1.icon', response.day1.icon)
@@ -240,6 +240,8 @@ angular.module('btcApp')
         skycons.play();
       }, 3000)
       
+    }).error(function(response){
+      $log.debug("[refreshWeatherForecast] FAIL")
     })
     
   }
