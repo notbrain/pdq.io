@@ -279,8 +279,8 @@ angular.module('btcApp')
   onceAMinute()
   
   // hourly on meta refresh
-  matrixCalendar()
-  getMLBStandings()
+  // matrixCalendar()
+  // getMLBStandings()
   refreshWeatherForecast()
   
   // time tick

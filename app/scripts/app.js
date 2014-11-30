@@ -24,6 +24,10 @@ angular
         templateUrl: 'views/sanfrancisco.html',
         controller: 'MainCtrl'
       })
+      .when('/theme/proto', {
+        templateUrl: 'views/default.html',
+        controller: 'MainCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
