@@ -5,19 +5,17 @@ angular.module('btcApp')
   
   $log.info('[MainCtrl]')
   
-  
-  
-  $scope.$watch('coinbase', function(newVal, oldVal) {
+  // $scope.$watch('coinbase', function(newVal, oldVal) {
     
-    $log.info('[$scope.$watch(\'coinbase\')] ' + moment().format('X.SSS'))
+  //   $log.info('[$scope.$watch(\'coinbase\')] ' + moment().format('X.SSS'))
     
-    if( !_.isUndefined(oldVal) && newVal !== oldVal ) {
-      // store price for graph if new value
-      // $log.info({newval: newVal, oldval: oldVal})
-      //$http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
-    }
+  //   if( !_.isUndefined(oldVal) && newVal !== oldVal ) {
+  //     // store price for graph if new value
+  //     // $log.info({newval: newVal, oldval: oldVal})
+  //     //$http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
+  //   }
     
-  }, true);
+  // }, true);
   
   var matrixCalendar = function() {
     // $log.info('[matrixCalendar]')
@@ -224,15 +222,15 @@ angular.module('btcApp')
       
       $log.info('[render Skycons]')
       
-      var skycons = new Skycons({"color": "#DEFFC2"});
+      var skycons = new Skycons({"color": "#e9e9e9"});
       
-      // skycons.add("skycon-today", response.current.icon);
-      // skycons.add("skycon-tomorrow", response.day1.icon);
-      // skycons.add("skycon-2days", response.day2.icon);
+      skycons.add("skycon-today", response.current.icon);
+      skycons.add("skycon-tomorrow", response.day1.icon);
+      skycons.add("skycon-2days", response.day2.icon);
       
-      // $log.debug('response.current.icon', response.current.icon)
-      // $log.debug('response.day1.icon', response.day1.icon)
-      // $log.debug('response.day2.icon', response.day2.icon)
+      $log.debug('response.current.icon', response.current.icon)
+      $log.debug('response.day1.icon', response.day1.icon)
+      $log.debug('response.day2.icon', response.day2.icon)
       
       
       $timeout(function() {
