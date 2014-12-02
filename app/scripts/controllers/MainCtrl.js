@@ -241,7 +241,7 @@ angular.module('btcApp')
       }, 3000)
       
     }).error(function(response){
-      $log.debug("[refreshWeatherForecast] FAIL")
+      $log.debug("[refreshWeatherForecast] FAIL", response)
     })
     
   }
