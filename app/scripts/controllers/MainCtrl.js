@@ -16,6 +16,11 @@ angular.module('btcApp')
   //   }
     
   // }, true);
+
+  $scope.epochToDate = function(epoch, format) {
+    var mmnt = moment.unix(epoch)
+    return mmnt.format(format)
+  }
   
   var matrixCalendar = function() {
     // $log.info('[matrixCalendar]')

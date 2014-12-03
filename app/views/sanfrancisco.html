@@ -19,8 +19,21 @@
   
   <div class="weather grouping">
     
+    <div class="current-temp">
+      {{ weather.current.temperature | number:0 }}&deg;<sup>F</sup>
+      {{ (weather.current.temperature - 32) / 1.8000 | number:0 }}&deg;<sup>C</sup>
+    </div>
+    
     <div class="daypod" ng-repeat="day in weather.daily.data">
-      <canvas id="skycon-{{$index}}" width="96" height="96"></canvas>
+      
+      <canvas class="skycon-canvas" id="skycon-{{$index}}" width="72" height="72"></canvas>
+      
+      <div class="weather-temps">
+        <span class="low">{{day.temperatureMin | number: 0}}</span>
+        <span class="high">{{day.temperatureMax | number: 0}}</span>
+      </div>
+      
+      <div class="weather-date">{{epochToDate(day.time, 'M/D')}}</div>
     </div>
     
   </div>

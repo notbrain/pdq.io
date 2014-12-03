@@ -80,7 +80,7 @@ body {
   min-height: 120px;
   min-width: 120px;
   background-color: rgba(0,0,0, 0.75);
-  padding: 0.25em;
+  padding: 0.125em;
   margin-bottom: 0.125em;
   border-radius: 28px;
 }
@@ -130,9 +130,14 @@ body {
   float: left;
   /*width: 256px;*/
   background-color: rgba(0,0,0, 0.55);
-  padding: 0.25em;
+  /*padding: 0.25em;*/
   margin-right: 0.125em;
   border-radius: 28px;
+}
+
+.theme-sanfrancisco .weather.grouping div.daypod canvas {
+  width: 72px;
+  margin: 24px 24px 0 24px;
 }
 
 .theme-sanfrancisco .weather.grouping div label {
@@ -148,4 +153,33 @@ body {
 #kst {
   font-size: 84px;
   color: #CBCCB9;
+}
+
+.current-temp {
+  /*float: left;*/
+  font-size: 84px;
+  line-height: 150px;
+  margin-right: 0.125em;
+}
+
+.current-temp sup {
+  font-size: 50%;
+  display: none;
+}
+
+.weather-temps {
+  font-size: 36px;
+  text-align: center;
+}
+.weather-temps .high {
+  color: #FBD1FA;
+}
+.weather-temps .low {
+  color: #AFE9FB;
+}
+
+.weather-date {
+  border-top: 1px solid #333;
+  font-size: 36px;
+  text-align: center;
 }
