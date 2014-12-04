@@ -117,7 +117,7 @@ router.get('/historical',
         
         console.log('count: ' + changeCount)
         
-        res.json(200, jsonPrices)
+        res.status(200).json(jsonPrices)
       }
     })
     

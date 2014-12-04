@@ -5,25 +5,13 @@ angular.module('btcApp')
   
   $log.info('[MainCtrl]')
   
-  // $scope.$watch('coinbase', function(newVal, oldVal) {
-    
-  //   $log.info('[$scope.$watch(\'coinbase\')] ' + moment().format('X.SSS'))
-    
-  //   if( !_.isUndefined(oldVal) && newVal !== oldVal ) {
-  //     // store price for graph if new value
-  //     // $log.info({newval: newVal, oldval: oldVal})
-  //     //$http.post('http://192.168.1.12:3000/api/record/update/price', {price:newVal.subtotal.amount})
-  //   }
-    
-  // }, true);
-
   $scope.epochToDate = function(epoch, format) {
     var mmnt = moment.unix(epoch)
     return mmnt.format(format)
   }
   
   var matrixCalendar = function() {
-    // $log.info('[matrixCalendar]')
+    $log.info('[matrixCalendar]')
     
     var months = []
     for(var i=0; i<12; i++) {
@@ -210,9 +198,11 @@ angular.module('btcApp')
   
   var refreshWeatherForecast = function(){
     
-    $log.info('[refreshWeatherForecast]')
+    
     
     var url = APPCONFIG.apiHost + '/weather/v2/forecast'
+    
+    $log.info('[refreshWeatherForecast]', url)
     
     $http({
       method: 'GET',
@@ -237,6 +227,7 @@ angular.module('btcApp')
       $log.debug('response.day1.icon', response.day1.icon)
       $log.debug('response.day2.icon', response.day2.icon)
       
+      skycons.add('skycon-now', response.current.icon)
       
       $timeout(function() {
         _.forEach(response.daily.data, function(datum, idx){
@@ -297,6 +288,7 @@ angular.module('btcApp')
     refreshBlockchainData()
     refreshCoinbaseData()
     refreshCoinbaseHistoricalData()
+    refreshWeatherForecast()
     
   }
   
@@ -304,7 +296,7 @@ angular.module('btcApp')
   // hourly on meta refresh
   // matrixCalendar()
   // getMLBStandings()
-  refreshWeatherForecast()
+  // refreshWeatherForecast()
   everyFifteenMinutes()
   onceAMinute()
   

@@ -22,6 +22,7 @@
     <div class="current-temp">
       {{ weather.current.temperature | number:0 }}&deg;<sup>F</sup>
       {{ (weather.current.temperature - 32) / 1.8000 | number:0 }}&deg;<sup>C</sup>
+      <canvas class="skycon-canvas" id="skycon-now" width="144" height="144"></canvas>
     </div>
     
     <div class="daypod" ng-repeat="day in weather.daily.data">
@@ -58,7 +59,6 @@
   </div>
   
   <div class="date grouping">
-    
     
     <h3>{{dayOfWeek}}, {{todaysDate}}</h3>
     <h1>{{now}}<span class="ampm">{{ampm}}</span></h1>

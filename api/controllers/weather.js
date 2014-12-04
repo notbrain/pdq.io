@@ -15,7 +15,7 @@ var router        = express.Router()
 
 router.use(function(req, res, next) {
   
-  var expires = moment().minute(0).second(0).add('hours', 8).format('ddd, DD MMM YYYY HH:mm:ss')
+  var expires = moment().minute(0).second(0).add(8, 'hours').format('ddd, DD MMM YYYY HH:mm:ss')
   
   res.set({
     // 'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -65,6 +65,8 @@ router.get('/v2/forecast',
   function(req, res) {
     
     request.get('https://api.forecast.io/forecast/f30c5e510b0f910bd35f540a9d1dec12/37.7857361,-122.4318036', function(err, response, body){
+      
+      console.log(err)
       
       var json = JSON.parse(body)
       
