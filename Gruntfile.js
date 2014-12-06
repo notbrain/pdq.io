@@ -170,12 +170,8 @@ module.exports = function (grunt) {
     
     // Automatically inject Bower components into the app
     wiredep: {
-      options: {
-        cwd: '<%= yeoman.app %>'
-      },
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /..\//
+        src: ['app/index.html']
       }
     },
     
@@ -270,7 +266,7 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          collapseWhitespace: true,
+          collapseWhitespace: false,
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
