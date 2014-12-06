@@ -44,6 +44,7 @@ angular
         redirectTo: '/'
       })
   })
-  .config(function($httpProvider) {
+  .config(function($httpProvider, $locationProvider) {
     $httpProvider.defaults.useXDomain = true
+    $locationProvider.html5Mode(true);
   })
