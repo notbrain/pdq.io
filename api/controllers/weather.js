@@ -66,7 +66,7 @@ router.get('/v2/forecast',
     
     request.get('https://api.forecast.io/forecast/f30c5e510b0f910bd35f540a9d1dec12/37.7857361,-122.4318036', function(err, response, body){
       
-      console.log(err)
+      // console.log('err:',err)
       
       var json = JSON.parse(body)
       
