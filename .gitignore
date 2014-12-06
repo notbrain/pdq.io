@@ -4,3 +4,6 @@ dist
 .sass-cache
 bower
 config.js
+.editorconfig
+.DS_Store
+config.codekit
