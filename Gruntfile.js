@@ -78,8 +78,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use(
-                '/bower',
-                connect.static('app/bower')
+                '/bower_components',
+                connect.static('./bower_components')
               ),
               connect().use(
                 '/custombs',
@@ -98,8 +98,8 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
-                '/bower',
-                connect.static('app/bower')
+                '/bower_components',
+                connect.static('./bower_components')
               ),
               connect().use(
                 '/custombs',
