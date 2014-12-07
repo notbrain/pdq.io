@@ -15,7 +15,7 @@ var app              = express()
 
 app.use(bodyParser.json())
 
-var port = process.env.NGXP4SEED_PORT || 3000
+var port = process.env.NODE_PORT || 3000
 
 var env  = process.env.NODE_ENV || 'dev'
 
