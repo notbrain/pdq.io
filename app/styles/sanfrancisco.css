@@ -74,15 +74,20 @@ body {
 }
 
 .theme-sanfrancisco .muni.grouping div {
+  overflow: hidden;
   font-size: 110px;
   text-align: right;
-  min-height: 120px;
+  min-height: 100px;
   min-width: 120px;
   background-color: rgba(0,0,0, 0.75);
   padding: 0.125em;
   margin-bottom: 0.125em;
   border-radius: 24px;
   font-weight: 400;
+}
+
+.theme-sanfrancisco .muni.grouping div > span {
+  float: right;
 }
 
 .theme-sanfrancisco .muni.grouping label {
