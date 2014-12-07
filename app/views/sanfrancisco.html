@@ -27,7 +27,7 @@
     
     <div class="daypod" ng-repeat="day in weather.daily.data">
       
-      <canvas class="skycon-canvas" id="skycon-{{$index}}" width="72" height="72"></canvas>
+      <canvas class="skycon-canvas skycon-{{day.icon}}" id="skycon-{{$index}}" width="72" height="72"></canvas>
       
       <div class="weather-temps">
         <span class="low">{{day.temperatureMin | number: 0}}</span>

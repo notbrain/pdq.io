@@ -219,14 +219,6 @@ angular.module('btcApp')
       
       var skycons = new Skycons({"color": "#e9e9e9"});
       
-      // skycons.add("skycon-today", response.current.icon);
-      // skycons.add("skycon-tomorrow", response.day1.icon);
-      // skycons.add("skycon-2days", response.day2.icon);
-      
-      $log.debug('response.current.icon', response.current.icon)
-      $log.debug('response.day1.icon', response.day1.icon)
-      $log.debug('response.day2.icon', response.day2.icon)
-      
       skycons.add('skycon-now', response.current.icon)
       
       $timeout(function() {

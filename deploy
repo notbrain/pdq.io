@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ssh root@pdq.io 'cd pdq; git pull && grunt build'
+# ssh root@pdq.io 'cd pdq; git pull && grunt build'
+ssh pdqio@notbrain.com 'cd /usr/local/apps/pdq.io; git pull && grunt build; forever stopall; forever start /usr/local/apps/pdq.io/api/server.js'
