@@ -45,5 +45,7 @@ app.use('/weather',    require('./controllers/weather').controller)
 app.use('/sports',     require('./controllers/sports').controller)
 
 // SERVER
-app.listen(port)
+app.listen(port, function(){
+  console.log("Express server listening on port " + app.get('port'));
+})
 console.log('Listening for connections on port ' + port)
