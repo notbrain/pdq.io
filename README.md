@@ -1,5 +1,9 @@
 ## Home Dashboard
 
+The current list of features enabled is below, but is not an exhaustive list. Over the course of development this has been pared down to essentials and to show a more minimal interface so as to be more attractive on the wall of a living room or common hallway area of a home. Previous ugliness revolved around a BTC price graph, SF Giants standings (2014 when they won the WS, naturally). So I think the last time this was run was around early 2015 or so.
+
+### Current Main Template Display Modules
+
 - Weather Forecast and today's temp in F° and C°.
 - Bus Lines arrival info for next 2 buses per line
 - Bitcoin Price and Volume information
