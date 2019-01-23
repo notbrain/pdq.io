@@ -14,4 +14,14 @@ The current list of features enabled is below, but is not an exhaustive list. Ov
 
 ## Installation
 
-Web page calls the API side running in node. Steps TBD.
+Do not use this application. See intrinsicbits/pdq-vue and intrinsicbits/pdq-api for the new version of this project.
+
+## Previous Incarnation
+
+The previous edition of this dashboard had a couple extras, but as you can see below, the visual design was not really a factor. It was more about data density, how much information can you pack into a single 1920x1080 screen but not overwhelm your ability to glance and quickly find something out. Things that will be moved to the new app will be:
+
+- Bitcoin price tracker
+- Grid calendar - the unlabeled grid rectangle with the dayglo green mark is a grid of 365/6 squares that represent all the days in the year. Meant to convey your position in the year and to--over time--realize that time is precious. Similar to a life expectancy clock, but with a smaller window into time passing.
+
+
+![image](https://user-images.githubusercontent.com/67282/51620007-5a6e4c00-1ee6-11e9-8f64-ed696af7911a.png)
