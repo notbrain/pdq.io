@@ -5,6 +5,8 @@ Do not install this or try to get it running, it is 4+ years old. It has been po
 - https://github.com/intrinsicbits/pdq-vue
 - https://github.com/intrinsicbits/pdq-api
 
+It's not completely ported, and not all features below will be moved same-same. The grid calendar and more subtle bitcoin price/network health sparklines will be added soon.
+
 ## Home Dashboard
 
 The current list of features enabled is below, but is not an exhaustive list. Over the course of development this has been pared down to essentials and to show a more minimal interface so as to be more attractive on the wall of a living room or common hallway area of a home. Previous ugliness revolved around a BTC price graph, SF Giants standings (2014 when they won the WS, naturally). So I think the last time this was run was around early 2015 or so.
