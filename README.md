@@ -36,4 +36,6 @@ The previous edition of this dashboard had a couple extras, but as you can see b
 
 # Small-screen application experiment
 
-![image](https://user-images.githubusercontent.com/67282/51620841-154b1980-1ee8-11e9-824a-41fc092252a5.png)
+Raspberry Pi with an 8" screen, for near the front door/foyer area.
+
+![image](https://user-images.githubusercontent.com/67282/51620925-4c212f80-1ee8-11e9-93ec-a513639675d1.png)
