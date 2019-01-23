@@ -32,5 +32,8 @@ The previous edition of this dashboard had a couple extras, but as you can see b
 - Bitcoin price tracker
 - Grid calendar - the unlabeled grid rectangle with the dayglo green mark is a grid of 365/6 squares that represent all the days in the year. Meant to convey your position in the year and to--over time--realize that time is precious. Similar to a life expectancy clock, but with a smaller window into time passing.
 
-
 ![image](https://user-images.githubusercontent.com/67282/51620007-5a6e4c00-1ee6-11e9-8f64-ed696af7911a.png)
+
+# Small-screen application experiment
+
+![image](https://user-images.githubusercontent.com/67282/51620841-154b1980-1ee8-11e9-824a-41fc092252a5.png)
