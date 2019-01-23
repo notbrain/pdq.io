@@ -1,4 +1,4 @@
-## This app is deprecated and ancient
+## This app is ancient and has many old libs that have security issues. 
 
 Do not install this or try to get it running, it is 4+ years old. It has been ported to Vue/Koa here:
 
